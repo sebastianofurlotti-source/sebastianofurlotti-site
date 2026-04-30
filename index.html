@@ -601,12 +601,23 @@ footer .socials svg{ width: 16px; height: 16px; }
   .work-date{ font-size: 11px; padding: 4px 9px; }
 }
 
-/* Touch devices: hide custom cursor */
+/* Touch devices: hide custom cursor + faster, snappier transitions */
 @media (hover: none){
   .cursor, .cursor *{ display: none !important; }
-  body{ cursor: auto; }
+  body{ cursor: auto; -webkit-overflow-scrolling: touch; }
   .work-frame:hover img,
   .work-frame:hover .placeholder{ transform: none; filter: none; }
+
+  /* Snappier reveal animations on phones */
+  .work-frame{ transition: clip-path .55s var(--e-out); }
+  .work-frame img,
+  .work-frame .placeholder{ transition: transform .8s var(--e-out), filter .5s var(--e-out); }
+  .work-date{ transition: opacity .4s var(--e-out), transform .45s var(--e-out); }
+  .work.is-in .work-date{ transition-delay: .25s; }
+
+  /* Intro: shorter character animations */
+  .intro-title .ch{ transition: transform .55s cubic-bezier(.5,.1,.2,1), opacity .5s var(--e-out); }
+  .intro-rule{ transition: transform .55s cubic-bezier(.7,.02,.2,1); }
 }
 
 /* Landscape phones: shrink intro vertical chrome */
@@ -1281,7 +1292,6 @@ section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
 <section class="page" id="biografia">
   <div class="section-head">
     <div class="double-rule top"></div>
-    <div class="roman">II</div>
     <h2>Biografia</h2>
     <span class="ornament">✶ ✶ ✶</span>
     <div class="double-rule bottom"></div>
