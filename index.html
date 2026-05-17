@@ -1499,8 +1499,7 @@ section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
   works.forEach(w => {
     const date = w.querySelector('.work-date');
     if(date){
-      const r = (Math.random() * 2.4 - 1.2).toFixed(2);
-      date.style.setProperty('--rot', r + 'deg');
+      date.style.setProperty('--rot', '0deg');
     }
   });
 
