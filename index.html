@@ -636,7 +636,6 @@ section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
 <header class="site-header" id="header">
   <span class="menu-star menu-star-l" aria-hidden="true">✶</span>
   <nav class="menu" aria-label="Sezioni">
-    <a href="#biografia" class="nav-link">Biografia</a>
   </nav>
   <span class="menu-star menu-star-r" aria-hidden="true">✶</span>
 </header>
@@ -1398,75 +1397,6 @@ section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════════
-     BIOGRAFIA — replace text below.
-     ═══════════════════════════════════════════════════════════════════ -->
-<section class="page" id="biografia">
-  <div class="section-head">
-    <div class="double-rule top"></div>
-    <h2>Biografia</h2>
-    <span class="ornament">✶ ✶ ✶</span>
-    <div class="double-rule bottom"></div>
-  </div>
-
-  <div class="bio-wrap">
-    <div class="bio-body">
-                              <!-- BIO TEXT -->
-      <p>
-        <span class="dropcap">S</span>ebastiano Furlotti è un
-        professionista in ambito economico.
-      </p>
-      <p>
-        Per il resto, si rimanda a quanto sopra.
-      </p>
-      <!-- /BIO TEXT -->
-    </div>
-
-    <span class="section-divider">✶ ✶ ✶</span>
-
-    <div class="cv">
-      <div class="cv-heading">Esposizioni</div>
-      <div class="cv-rule"></div>
-      <ul class="cv-list">
-                <!-- CV ROWS -->
-        <li class="cv-row">
-          <span class="cv-year">MMXXIII</span>
-          <span class="cv-desc"><em>Quadrinomi</em>, Nomi (RV). Con Schweizer e Conta, a cura di Claudio Mattè, testi di Maurizio Scudiero.<span class="place">collettiva</span></span>
-        </li>
-        <li class="cv-row">
-          <span class="cv-year">MMXXII</span>
-          <span class="cv-desc"><em>Women for Justice</em>, Santa Maria della Pietà, Roma.<span class="place">collettiva</span></span>
-        </li>
-        <li class="cv-row">
-          <span class="cv-year">MMXXII</span>
-          <span class="cv-desc"><em>Nel nome di Mahsa</em>, chiostro di Palazzo Reale, Milano.<span class="place">collettiva</span></span>
-        </li>
-        <li class="cv-row">
-          <span class="cv-year">MMXXII</span>
-          <span class="cv-desc"><em>Per chi suona la campana</em>, ParmaArtFair, Galleria Centro Steccata.<span class="place">fiera</span></span>
-        </li>
-        <li class="cv-row">
-          <span class="cv-year">MMXXII</span>
-          <span class="cv-desc"><em>Women for Justice</em>, Museo ADI – Compasso d'Oro, Milano. Con <em>Una Guernica per l'Afghanistan</em>.<span class="place">collettiva</span></span>
-        </li>
-        <li class="cv-row">
-          <span class="cv-year">MMXXII</span>
-          <span class="cv-desc"><em>Una Guernica per l'Afghanistan</em>, Monastero di San Nicolò al Lido, Venezia.<span class="place">personale</span></span>
-        </li>
-        <li class="cv-row">
-          <span class="cv-year">MMXXII</span>
-          <span class="cv-desc"><em>Di qua dal Paradiso</em>, Spazio Camarini, Mantova. A cura di Chiara Bortolato, con poesie di Mariasole Zanzucchi.<span class="place">collettiva</span></span>
-        </li>
-        <li class="cv-row">
-          <span class="cv-year">MMXXI</span>
-          <span class="cv-desc"><em>Una Guernica per l'Afghanistan</em>, Palazzo della Provincia, Piazzale della Pace, Parma. Patrocinio del Comune.<span class="place">personale</span></span>
-        </li>
-        <!-- /CV ROWS -->
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- ─── FOOTER ───────────────────────────────────────────────────────── -->
 <footer>
   <div class="socials" aria-label="Social">
@@ -1641,7 +1571,7 @@ section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
     }
   }
 
-  const sections = ['timbri','biografia']
+  const sections = ['timbri']
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
