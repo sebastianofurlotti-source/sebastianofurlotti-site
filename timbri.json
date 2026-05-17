@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-05-17",
-  "count": 68,
+  "count": 67,
   "items": [
     {
       "id": "IMG_8414",
@@ -421,20 +421,6 @@
       "height": 1800,
       "ratio_pct": 142.52,
       "filename": "Timbro_2026-03-16.jpg"
-    },
-    {
-      "id": "IMG_8171",
-      "date_iso": "2026-03-15",
-      "date_display": "15/3/26",
-      "raw_stamp": "15/3/2026",
-      "file_web": "foto_definitive/Timbro_2026-03-15_b.jpg",
-      "file_thumb": "foto_definitive/thumbs/Timbro_2026-03-15_b.jpg",
-      "confidence": "high",
-      "notes": "stesso timbro/data di IMG_8170 — possibili 2 versioni della stessa opera",
-      "width": 1291,
-      "height": 1800,
-      "ratio_pct": 139.43,
-      "filename": "Timbro_2026-03-15_b.jpg"
     },
     {
       "id": "IMG_8170",
