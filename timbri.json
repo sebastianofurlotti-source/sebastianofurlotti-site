@@ -423,20 +423,6 @@
       "filename": "Timbro_2026-03-16.jpg"
     },
     {
-      "id": "IMG_8170",
-      "date_iso": "2026-03-15",
-      "date_display": "15/3/26",
-      "raw_stamp": "15/3/2026",
-      "file_web": "foto_definitive/Timbro_2026-03-15_a.jpg",
-      "file_thumb": "foto_definitive/thumbs/Timbro_2026-03-15_a.jpg",
-      "confidence": "high",
-      "notes": "stesso timbro/data di IMG_8171 — possibili 2 versioni della stessa opera",
-      "width": 1284,
-      "height": 1800,
-      "ratio_pct": 140.19,
-      "filename": "Timbro_2026-03-15_a.jpg"
-    },
-    {
       "id": "IMG_8171",
       "date_iso": "2026-03-15",
       "date_display": "15/3/26",
@@ -449,6 +435,20 @@
       "height": 1800,
       "ratio_pct": 139.43,
       "filename": "Timbro_2026-03-15_b.jpg"
+    },
+    {
+      "id": "IMG_8170",
+      "date_iso": "2026-03-15",
+      "date_display": "15/3/26",
+      "raw_stamp": "15/3/2026",
+      "file_web": "foto_definitive/Timbro_2026-03-15_a.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-03-15_a.jpg",
+      "confidence": "high",
+      "notes": "stesso timbro/data di IMG_8171 — possibili 2 versioni della stessa opera",
+      "width": 1284,
+      "height": 1800,
+      "ratio_pct": 140.19,
+      "filename": "Timbro_2026-03-15_a.jpg"
     },
     {
       "id": "IMG_8164",
@@ -535,20 +535,6 @@
       "filename": "Timbro_2026-02-15.jpg"
     },
     {
-      "id": "IMG_8149",
-      "date_iso": "2026-02-14",
-      "date_display": "14/2/26",
-      "raw_stamp": "14/2/2026",
-      "file_web": "foto_definitive/Timbro_2026-02-14_a.jpg",
-      "file_thumb": "foto_definitive/thumbs/Timbro_2026-02-14_a.jpg",
-      "confidence": "high",
-      "notes": "corrected 2026-01-12->2026-02-14 (user 2026-04-29)",
-      "width": 1280,
-      "height": 1800,
-      "ratio_pct": 140.62,
-      "filename": "Timbro_2026-02-14_a.jpg"
-    },
-    {
       "id": "IMG_8162",
       "date_iso": "2026-02-14",
       "date_display": "14/2/26",
@@ -561,6 +547,20 @@
       "height": 1800,
       "ratio_pct": 141.62,
       "filename": "Timbro_2026-02-14_b.jpg"
+    },
+    {
+      "id": "IMG_8149",
+      "date_iso": "2026-02-14",
+      "date_display": "14/2/26",
+      "raw_stamp": "14/2/2026",
+      "file_web": "foto_definitive/Timbro_2026-02-14_a.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-02-14_a.jpg",
+      "confidence": "high",
+      "notes": "corrected 2026-01-12->2026-02-14 (user 2026-04-29)",
+      "width": 1280,
+      "height": 1800,
+      "ratio_pct": 140.62,
+      "filename": "Timbro_2026-02-14_a.jpg"
     },
     {
       "id": "IMG_8186",
@@ -701,20 +701,6 @@
       "height": 1273,
       "ratio_pct": 70.72,
       "filename": "Timbro_2026-01-11_b.jpg"
-    },
-    {
-      "id": "IMG_8191",
-      "date_iso": "2026-01-11",
-      "date_display": "11/1/26",
-      "raw_stamp": "11/1/2026",
-      "file_web": "foto_definitive/Timbro_2026-01-11_a.jpg",
-      "file_thumb": "foto_definitive/thumbs/Timbro_2026-01-11_a.jpg",
-      "confidence": "high",
-      "notes": "corrected 2025-12-13->2026-01-11 (audit 2026-04-29)",
-      "width": 1298,
-      "height": 1800,
-      "ratio_pct": 138.67,
-      "filename": "Timbro_2026-01-11_a.jpg"
     },
     {
       "id": "IMG_8160",
@@ -939,6 +925,20 @@
       "height": 1800,
       "ratio_pct": 137.93,
       "filename": "Timbro_2025-11-24.jpg"
+    },
+    {
+      "id": "IMG_8191",
+      "date_iso": "2025-11-15",
+      "date_display": "15/11/25",
+      "raw_stamp": "15/11/2025",
+      "file_web": "foto_definitive/Timbro_2025-11-15.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2025-11-15.jpg",
+      "confidence": "high",
+      "notes": "corrected 2026-01-11 -> 2025-11-15 (user 2026-05-17)",
+      "width": 1298,
+      "height": 1800,
+      "ratio_pct": 138.67,
+      "filename": "Timbro_2025-11-15.jpg"
     },
     {
       "id": "IMG_8185",

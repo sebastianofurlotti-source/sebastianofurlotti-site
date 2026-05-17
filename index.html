@@ -92,6 +92,20 @@ body{
 .is-loaded .menu-star{ opacity: 0.85; }
 
 nav.menu{ display: flex; gap: 22px; align-items: center; }
+.site-title{
+  font-family: var(--didone);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .8s var(--e-out) .55s, transform .8s var(--e-out) .55s, font-size .6s var(--e-out);
+}
+.is-loaded .site-title{ opacity: 1; transform: translateY(0); }
+.site-header.is-shrunk .site-title{ font-size: 11px; }
 nav.menu a{
   position: relative;
   font-family: var(--didone);
@@ -636,6 +650,7 @@ section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
 <header class="site-header" id="header">
   <span class="menu-star menu-star-l" aria-hidden="true">✶</span>
   <nav class="menu" aria-label="Sezioni">
+    <span class="site-title">Sebastiano Furlotti</span>
   </nav>
   <span class="menu-star menu-star-r" aria-hidden="true">✶</span>
 </header>
@@ -1197,17 +1212,6 @@ section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
     </figure>
 
     <figure class="work">
-      <div class="work-frame" style="--ratio: 138.67%;">
-        <img src="foto_definitive/Timbro_2026-01-11_a.jpg"
-             srcset="foto_definitive/thumbs/Timbro_2026-01-11_a.jpg 800w, foto_definitive/Timbro_2026-01-11_a.jpg 1800w"
-             sizes="(max-width: 720px) 92vw, 720px"
-             width="1298" height="1800"
-             alt="11/1/26" loading="lazy" decoding="async" />
-      </div>
-      <figcaption class="work-caption"><span class="work-date">11/1/26</span></figcaption>
-    </figure>
-
-    <figure class="work">
       <div class="work-frame" style="--ratio: 68.61%;">
         <img src="foto_definitive/Timbro_2026-01-10.jpg"
              srcset="foto_definitive/thumbs/Timbro_2026-01-10.jpg 800w, foto_definitive/Timbro_2026-01-10.jpg 1800w"
@@ -1381,6 +1385,17 @@ section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
              alt="24/11/25" loading="lazy" decoding="async" />
       </div>
       <figcaption class="work-caption"><span class="work-date">24/11/25</span></figcaption>
+    </figure>
+
+    <figure class="work">
+      <div class="work-frame" style="--ratio: 138.67%;">
+        <img src="foto_definitive/Timbro_2025-11-15.jpg"
+             srcset="foto_definitive/thumbs/Timbro_2025-11-15.jpg 800w, foto_definitive/Timbro_2025-11-15.jpg 1800w"
+             sizes="(max-width: 720px) 92vw, 720px"
+             width="1298" height="1800"
+             alt="15/11/25" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption"><span class="work-date">15/11/25</span></figcaption>
     </figure>
 
     <figure class="work">
