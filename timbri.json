@@ -1,7 +1,49 @@
 {
-  "generated_at": "2026-05-17",
-  "count": 67,
+  "generated_at": "2026-05-21",
+  "count": 71,
   "items": [
+    {
+      "id": "IMG_8472",
+      "date_iso": "2026-05-20",
+      "date_display": "20/5/26",
+      "raw_stamp": "20/5/2026",
+      "file_web": "foto_definitive/Timbro_2026-05-20.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-05-20.jpg",
+      "filename": "Timbro_2026-05-20.jpg",
+      "confidence": "high",
+      "notes": "",
+      "width": 1800,
+      "height": 1293,
+      "ratio_pct": 71.83
+    },
+    {
+      "id": "IMG_8473",
+      "date_iso": "2026-05-19",
+      "date_display": "19/5/26",
+      "raw_stamp": "19/5/2026",
+      "file_web": "foto_definitive/Timbro_2026-05-19.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-05-19.jpg",
+      "filename": "Timbro_2026-05-19.jpg",
+      "confidence": "high",
+      "notes": "",
+      "width": 1800,
+      "height": 1229,
+      "ratio_pct": 68.28
+    },
+    {
+      "id": "IMG_8475",
+      "date_iso": "2026-05-18",
+      "date_display": "18/5/26",
+      "raw_stamp": "18/5/2026",
+      "file_web": "foto_definitive/Timbro_2026-05-18.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-05-18.jpg",
+      "filename": "Timbro_2026-05-18.jpg",
+      "confidence": "high",
+      "notes": "",
+      "width": 1279,
+      "height": 1800,
+      "ratio_pct": 140.73
+    },
     {
       "id": "IMG_8414",
       "date_iso": "2026-05-17",
@@ -15,6 +57,20 @@
       "width": 1800,
       "height": 1199,
       "ratio_pct": 66.61
+    },
+    {
+      "id": "IMG_8474",
+      "date_iso": "2026-05-16",
+      "date_display": "16/5/26",
+      "raw_stamp": "16/5/2026",
+      "file_web": "foto_definitive/Timbro_2026-05-16.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-05-16.jpg",
+      "filename": "Timbro_2026-05-16.jpg",
+      "confidence": "high",
+      "notes": "",
+      "width": 1800,
+      "height": 1213,
+      "ratio_pct": 67.39
     },
     {
       "id": "IMG_8406_2",
