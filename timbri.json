@@ -208,9 +208,9 @@
       "filename": "Timbro_2026-05-10.jpg",
       "confidence": "high",
       "notes": "",
-      "width": 1302,
+      "width": 1299,
       "height": 1800,
-      "ratio_pct": 138.25
+      "ratio_pct": 138.57
     },
     {
       "id": "IMG_8340",
@@ -305,9 +305,9 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-04-27.jpg",
       "confidence": "high",
       "notes": "",
-      "width": 1800,
+      "width": 1795,
       "height": 1290,
-      "ratio_pct": 71.67,
+      "ratio_pct": 71.87,
       "filename": "Timbro_2026-04-27.jpg"
     },
     {
@@ -389,9 +389,9 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-04-10.jpg",
       "confidence": "high",
       "notes": "",
-      "width": 1246,
+      "width": 1234,
       "height": 1800,
-      "ratio_pct": 144.46,
+      "ratio_pct": 145.87,
       "filename": "Timbro_2026-04-10.jpg"
     },
     {
@@ -417,9 +417,9 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-04-08.jpg",
       "confidence": "high",
       "notes": "",
-      "width": 1800,
+      "width": 1797,
       "height": 1202,
-      "ratio_pct": 66.78,
+      "ratio_pct": 66.89,
       "filename": "Timbro_2026-04-08.jpg"
     },
     {
@@ -431,9 +431,9 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-04-07.jpg",
       "confidence": "high",
       "notes": "",
-      "width": 1304,
+      "width": 1299,
       "height": 1800,
-      "ratio_pct": 138.04,
+      "ratio_pct": 138.57,
       "filename": "Timbro_2026-04-07.jpg"
     },
     {
@@ -488,8 +488,8 @@
       "confidence": "high",
       "notes": "corrected 2026-03-31->2026-03-30 (user 2026-04-29)",
       "width": 1233,
-      "height": 1800,
-      "ratio_pct": 145.99,
+      "height": 1797,
+      "ratio_pct": 145.74,
       "filename": "Timbro_2026-03-30.jpg"
     },
     {
@@ -501,9 +501,9 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-03-27.jpg",
       "confidence": "high",
       "notes": "",
-      "width": 1800,
-      "height": 1325,
-      "ratio_pct": 73.61,
+      "width": 1790,
+      "height": 1324,
+      "ratio_pct": 73.97,
       "filename": "Timbro_2026-03-27.jpg"
     },
     {
@@ -571,9 +571,9 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-03-14.jpg",
       "confidence": "high",
       "notes": "",
-      "width": 1800,
+      "width": 1796,
       "height": 1301,
-      "ratio_pct": 72.28,
+      "ratio_pct": 72.44,
       "filename": "Timbro_2026-03-14.jpg"
     },
     {
@@ -614,8 +614,8 @@
       "confidence": "medium",
       "notes": "data corretta da 12/12/25 a 28/2/26 (utente 2026-05-02)",
       "width": 1800,
-      "height": 1297,
-      "ratio_pct": 72.06,
+      "height": 1295,
+      "ratio_pct": 71.94,
       "filename": "Timbro_2026-02-28.jpg"
     },
     {
@@ -642,8 +642,8 @@
       "confidence": "high",
       "notes": "corretta da 2026→2025 dopo re-verifica | data corretta da 15/12/25 a 15/2/26 (utente 2026-05-02)",
       "width": 1800,
-      "height": 1261,
-      "ratio_pct": 70.06,
+      "height": 1259,
+      "ratio_pct": 69.94,
       "filename": "Timbro_2026-02-15.jpg"
     },
     {
@@ -683,9 +683,9 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-02-11.jpg",
       "confidence": "high",
       "notes": "",
-      "width": 1800,
+      "width": 1789,
       "height": 1275,
-      "ratio_pct": 70.83,
+      "ratio_pct": 71.27,
       "filename": "Timbro_2026-02-11.jpg"
     },
     {
@@ -781,9 +781,9 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-01-16.jpg",
       "confidence": "high",
       "notes": "corretta da 2026→2025 dopo re-verifica | corrected 2025-12-16->2026-01-16 (user 2026-04-29)",
-      "width": 1327,
+      "width": 1312,
       "height": 1800,
-      "ratio_pct": 135.64,
+      "ratio_pct": 137.2,
       "filename": "Timbro_2026-01-16.jpg"
     },
     {
@@ -907,9 +907,9 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2025-12-25.jpg",
       "confidence": "high",
       "notes": "",
-      "width": 1800,
+      "width": 1795,
       "height": 1352,
-      "ratio_pct": 75.11,
+      "ratio_pct": 75.32,
       "filename": "Timbro_2025-12-25.jpg"
     },
     {
