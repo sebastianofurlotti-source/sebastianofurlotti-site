@@ -10,10 +10,10 @@
       "file_web": "foto_definitive/Timbro_2026-05-31.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-05-31.jpg",
       "confidence": "high",
-      "notes": "deskew+crop step 0 + filtro v5",
-      "width": 1800,
-      "height": 1306,
-      "ratio_pct": 72.56,
+      "notes": "deskew+crop step 0 + filtro v5 | ruotato 90° CCW per leggibilità (portrait)",
+      "width": 1306,
+      "height": 1800,
+      "ratio_pct": 137.83,
       "filename": "Timbro_2026-05-31.jpg"
     },
     {
