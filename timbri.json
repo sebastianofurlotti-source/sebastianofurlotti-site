@@ -10,10 +10,10 @@
       "file_web": "foto_definitive/Timbro_2026-06-02.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-02.jpg",
       "confidence": "high",
-      "notes": "perspective deskew manuale + v5 + table-replace by HUE (fix distorsione 2026-06-03)",
-      "width": 1800,
-      "height": 1403,
-      "ratio_pct": 77.94,
+      "notes": "crop su bbox testo dall'originale a306a3d",
+      "width": 1682,
+      "height": 1013,
+      "ratio_pct": 60.23,
       "filename": "Timbro_2026-06-02.jpg"
     },
     {
