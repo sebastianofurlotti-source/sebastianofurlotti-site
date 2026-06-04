@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03",
+  "generated_at": "2026-06-04",
   "count": 82,
   "items": [
     {
@@ -10,10 +10,10 @@
       "file_web": "foto_definitive/Timbro_2026-06-02.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-02.jpg",
       "confidence": "high",
-      "notes": "workflow da HEIC: 90 ccw + fine rotation -1.85° + crop + v5 (no perspective)",
+      "notes": "perspective deskew + v5 + crop bordi residui (rifinitura 2026-06-04)",
       "width": 1800,
-      "height": 1214,
-      "ratio_pct": 67.44,
+      "height": 1272,
+      "ratio_pct": 70.67,
       "filename": "Timbro_2026-06-02.jpg"
     },
     {
