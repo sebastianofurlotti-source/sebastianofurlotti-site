@@ -10,10 +10,10 @@
       "file_web": "foto_definitive/Timbro_2026-06-02.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-02.jpg",
       "confidence": "high",
-      "notes": "crop su bbox testo dall'originale a306a3d",
-      "width": 1682,
-      "height": 1013,
-      "ratio_pct": 60.23,
+      "notes": "rotation only (-2.43°), no perspective warp, bbox crop",
+      "width": 1670,
+      "height": 1071,
+      "ratio_pct": 64.13,
       "filename": "Timbro_2026-06-02.jpg"
     },
     {
