@@ -10,10 +10,10 @@
       "file_web": "foto_definitive/Timbro_2026-06-04.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-04.jpg",
       "confidence": "high",
-      "notes": "deskew + rotate CW (portrait) + v5 + table-replace by HUE + BR cleanup",
-      "width": 1249,
+      "notes": "workflow conservativo: rotation ≤3°, no perspective warp",
+      "width": 1232,
       "height": 1800,
-      "ratio_pct": 144.12,
+      "ratio_pct": 146.1,
       "filename": "Timbro_2026-06-04.jpg"
     },
     {
@@ -24,10 +24,10 @@
       "file_web": "foto_definitive/Timbro_2026-06-03.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-03.jpg",
       "confidence": "high",
-      "notes": "deskew step 0 + filtro v5 + clean borders",
+      "notes": "workflow conservativo: rotation ≤3°, no perspective warp",
       "width": 1800,
-      "height": 1337,
-      "ratio_pct": 74.28,
+      "height": 1233,
+      "ratio_pct": 68.5,
       "filename": "Timbro_2026-06-03.jpg"
     },
     {
