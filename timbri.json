@@ -10,10 +10,10 @@
       "file_web": "foto_definitive/Timbro_2026-06-04.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-04.jpg",
       "confidence": "high",
-      "notes": "rigenerato HD da originale: warp 4 angoli + filtro v5 (2026-06-05)",
-      "width": 1250,
+      "notes": "rigenerato HD da originale: deskew + maschera foglio (no warp) + filtro v5 (2026-06-05)",
+      "width": 1255,
       "height": 1800,
-      "ratio_pct": 144.0,
+      "ratio_pct": 143.43,
       "filename": "Timbro_2026-06-04.jpg"
     },
     {
@@ -24,10 +24,10 @@
       "file_web": "foto_definitive/Timbro_2026-06-03.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-03.jpg",
       "confidence": "high",
-      "notes": "rigenerato HD da originale: warp 4 angoli + filtro v5 (2026-06-05)",
+      "notes": "rigenerato HD da originale: deskew + maschera foglio (no warp) + filtro v5 (2026-06-05)",
       "width": 1800,
-      "height": 1408,
-      "ratio_pct": 78.22,
+      "height": 1289,
+      "ratio_pct": 71.61,
       "filename": "Timbro_2026-06-03.jpg"
     },
     {
