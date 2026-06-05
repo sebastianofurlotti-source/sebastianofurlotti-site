@@ -1,7 +1,35 @@
 {
-  "generated_at": "2026-06-04",
-  "count": 82,
+  "generated_at": "2026-06-05",
+  "count": 84,
   "items": [
+    {
+      "id": "IMG_8631",
+      "date_iso": "2026-06-04",
+      "date_display": "4/6/26",
+      "raw_stamp": "4/6/2026",
+      "file_web": "foto_definitive/Timbro_2026-06-04.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-04.jpg",
+      "confidence": "high",
+      "notes": "deskew + rotate CW (portrait) + v5 + table-replace by HUE + BR cleanup",
+      "width": 1249,
+      "height": 1800,
+      "ratio_pct": 144.12,
+      "filename": "Timbro_2026-06-04.jpg"
+    },
+    {
+      "id": "IMG_8632",
+      "date_iso": "2026-06-03",
+      "date_display": "3/6/26",
+      "raw_stamp": "3/6/2026",
+      "file_web": "foto_definitive/Timbro_2026-06-03.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-03.jpg",
+      "confidence": "high",
+      "notes": "deskew step 0 + filtro v5 + clean borders",
+      "width": 1800,
+      "height": 1337,
+      "ratio_pct": 74.28,
+      "filename": "Timbro_2026-06-03.jpg"
+    },
     {
       "id": "IMG_8613",
       "date_iso": "2026-06-02",
