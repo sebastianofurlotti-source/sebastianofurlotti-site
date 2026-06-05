@@ -10,10 +10,10 @@
       "file_web": "foto_definitive/Timbro_2026-06-04.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-04.jpg",
       "confidence": "high",
-      "notes": "workflow conservativo: rotation ≤3°, no perspective warp",
-      "width": 1050,
-      "height": 1509,
-      "ratio_pct": 143.71,
+      "notes": "rigenerato HD da originale: warp 4 angoli + filtro v5 (2026-06-05)",
+      "width": 1250,
+      "height": 1800,
+      "ratio_pct": 144.0,
       "filename": "Timbro_2026-06-04.jpg"
     },
     {
@@ -24,10 +24,10 @@
       "file_web": "foto_definitive/Timbro_2026-06-03.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-03.jpg",
       "confidence": "high",
-      "notes": "workflow conservativo: rotation ≤3°, no perspective warp",
-      "width": 1730,
-      "height": 1183,
-      "ratio_pct": 68.38,
+      "notes": "rigenerato HD da originale: warp 4 angoli + filtro v5 (2026-06-05)",
+      "width": 1800,
+      "height": 1408,
+      "ratio_pct": 78.22,
       "filename": "Timbro_2026-06-03.jpg"
     },
     {
