@@ -24,7 +24,7 @@
       "file_web": "foto_definitive/Timbro_2026-06-09.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-09.jpg",
       "confidence": "high",
-      "notes": "deskew + rotate CCW (portrait) + v5 + table-replace + clean borders",
+      "notes": "deskew + rotate CCW + v5 + table-replace + clean borders + fix macchie BL/BR",
       "width": 1191,
       "height": 1800,
       "ratio_pct": 151.13,
