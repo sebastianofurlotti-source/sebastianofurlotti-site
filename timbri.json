@@ -1,7 +1,49 @@
 {
-  "generated_at": "2026-06-07",
-  "count": 87,
+  "generated_at": "2026-06-12",
+  "count": 90,
   "items": [
+    {
+      "id": "IMG_8694",
+      "date_iso": "2026-06-11",
+      "date_display": "11/6/26",
+      "raw_stamp": "11/6/2026",
+      "file_web": "foto_definitive/Timbro_2026-06-11.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-11.jpg",
+      "confidence": "high",
+      "notes": "deskew + v5 + table-replace + clean borders",
+      "width": 1800,
+      "height": 1306,
+      "ratio_pct": 72.56,
+      "filename": "Timbro_2026-06-11.jpg"
+    },
+    {
+      "id": "IMG_8692",
+      "date_iso": "2026-06-09",
+      "date_display": "9/6/26",
+      "raw_stamp": "9/6/2026",
+      "file_web": "foto_definitive/Timbro_2026-06-09.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-09.jpg",
+      "confidence": "high",
+      "notes": "deskew + rotate CCW (portrait) + v5 + table-replace + clean borders",
+      "width": 1191,
+      "height": 1800,
+      "ratio_pct": 151.13,
+      "filename": "Timbro_2026-06-09.jpg"
+    },
+    {
+      "id": "IMG_8693",
+      "date_iso": "2026-06-08",
+      "date_display": "8/6/26",
+      "raw_stamp": "8/6/2026",
+      "file_web": "foto_definitive/Timbro_2026-06-08.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-08.jpg",
+      "confidence": "high",
+      "notes": "deskew + rotate CW (portrait) + v5 + table-replace + clean borders",
+      "width": 1249,
+      "height": 1800,
+      "ratio_pct": 144.12,
+      "filename": "Timbro_2026-06-08.jpg"
+    },
     {
       "id": "IMG_8648",
       "date_iso": "2026-06-07",
