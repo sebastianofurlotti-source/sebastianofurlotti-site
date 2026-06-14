@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-13",
-  "count": 92,
+  "generated_at": "2026-06-14",
+  "count": 93,
   "items": [
     {
       "id": "IMG_8697",
@@ -1121,6 +1121,20 @@
       "height": 1800,
       "ratio_pct": 134.23,
       "filename": "Timbro_2025-12-28.jpg"
+    },
+    {
+      "id": "IMG_8710",
+      "date_iso": "2025-12-27",
+      "date_display": "27/12/25",
+      "raw_stamp": "27/12/2025",
+      "file_web": "foto_definitive/Timbro_2025-12-27.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2025-12-27.jpg",
+      "filename": "Timbro_2025-12-27.jpg",
+      "confidence": "high",
+      "notes": "deskew + maschera foglio (no warp) + filtro v5 + crop colonna",
+      "width": 1145,
+      "height": 1800,
+      "ratio_pct": 157.21
     },
     {
       "id": "IMG_8187",
