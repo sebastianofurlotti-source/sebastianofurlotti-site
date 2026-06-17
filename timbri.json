@@ -26,9 +26,9 @@
       "filename": "Timbro_2026-06-15.jpg",
       "confidence": "high",
       "notes": "crop bbox testo + limite tavolo (QA visivo)",
-      "width": 1256,
+      "width": 1239,
       "height": 1800,
-      "ratio_pct": 143.31
+      "ratio_pct": 145.28
     },
     {
       "id": "IMG_8718",
