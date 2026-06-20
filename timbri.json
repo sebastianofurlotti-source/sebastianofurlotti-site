@@ -1,7 +1,49 @@
 {
-  "generated_at": "2026-06-17",
-  "count": 97,
+  "generated_at": "2026-06-20",
+  "count": 100,
   "items": [
+    {
+      "id": "IMG_8741",
+      "date_iso": "2026-06-19",
+      "date_display": "19/6/26",
+      "raw_stamp": "19/6/2026",
+      "file_web": "foto_definitive/Timbro_2026-06-19.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-19.jpg",
+      "filename": "Timbro_2026-06-19.jpg",
+      "confidence": "high",
+      "notes": "Otsu+erosione+v5 (QA visivo manuale)",
+      "width": 1270,
+      "height": 1800,
+      "ratio_pct": 141.73
+    },
+    {
+      "id": "IMG_8742",
+      "date_iso": "2026-06-18",
+      "date_display": "18/6/26",
+      "raw_stamp": "18/6/2026",
+      "file_web": "foto_definitive/Timbro_2026-06-18.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-18.jpg",
+      "filename": "Timbro_2026-06-18.jpg",
+      "confidence": "high",
+      "notes": "Otsu+erosione+v5 (QA visivo manuale)",
+      "width": 1800,
+      "height": 1250,
+      "ratio_pct": 69.44
+    },
+    {
+      "id": "IMG_8743",
+      "date_iso": "2026-06-17",
+      "date_display": "17/6/26",
+      "raw_stamp": "17/6/2026",
+      "file_web": "foto_definitive/Timbro_2026-06-17.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-06-17.jpg",
+      "filename": "Timbro_2026-06-17.jpg",
+      "confidence": "high",
+      "notes": "Otsu+erosione+v5 (QA visivo manuale)",
+      "width": 1785,
+      "height": 1296,
+      "ratio_pct": 72.61
+    },
     {
       "id": "IMG_8726",
       "date_iso": "2026-06-16",
