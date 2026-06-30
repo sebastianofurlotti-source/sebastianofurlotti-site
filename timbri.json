@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-25",
-  "count": 105,
+  "generated_at": "2026-06-30",
+  "count": 106,
   "items": [
     {
       "id": "IMG_8776",
@@ -1009,6 +1009,20 @@
       "height": 1292,
       "ratio_pct": 71.78,
       "filename": "Timbro_2026-02-28.jpg"
+    },
+    {
+      "id": "framed_22_2_2026",
+      "date_iso": "2026-02-22",
+      "date_display": "22/2/26",
+      "raw_stamp": "22/2/2026",
+      "file_web": "foto_definitive/Timbro_2026-02-22.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-02-22.jpg",
+      "filename": "Timbro_2026-02-22.jpg",
+      "confidence": "medium",
+      "notes": "framed, glass reflections removed",
+      "width": 735,
+      "height": 1080,
+      "ratio_pct": 146.94
     },
     {
       "id": "IMG_8148",
