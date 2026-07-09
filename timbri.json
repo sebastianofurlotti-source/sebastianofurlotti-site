@@ -1,7 +1,49 @@
 {
-  "generated_at": "2026-07-06",
-  "count": 117,
+  "generated_at": "2026-07-09",
+  "count": 120,
   "items": [
+    {
+      "id": "IMG_8940",
+      "date_iso": "2026-07-08",
+      "date_display": "8/7/26",
+      "raw_stamp": "8/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-08.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-08.jpg",
+      "filename": "Timbro_2026-07-08.jpg",
+      "confidence": "high",
+      "notes": "maschera HSV + erosione + v5",
+      "width": 1800,
+      "height": 1272,
+      "ratio_pct": 70.67
+    },
+    {
+      "id": "IMG_8938",
+      "date_iso": "2026-07-07",
+      "date_display": "7/7/26",
+      "raw_stamp": "7/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-07.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-07.jpg",
+      "filename": "Timbro_2026-07-07.jpg",
+      "confidence": "high",
+      "notes": "maschera HSV + erosione + v5",
+      "width": 1800,
+      "height": 1219,
+      "ratio_pct": 67.72
+    },
+    {
+      "id": "IMG_8939",
+      "date_iso": "2026-07-06",
+      "date_display": "6/7/26",
+      "raw_stamp": "6/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-06.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-06.jpg",
+      "filename": "Timbro_2026-07-06.jpg",
+      "confidence": "high",
+      "notes": "maschera HSV + erosione + v5",
+      "width": 1800,
+      "height": 1223,
+      "ratio_pct": 67.94
+    },
     {
       "id": "IMG_8907",
       "date_iso": "2026-07-05",
