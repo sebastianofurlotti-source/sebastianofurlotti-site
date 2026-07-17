@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-16",
-  "count": 127,
+  "generated_at": "2026-07-17",
+  "count": 128,
   "items": [
+    {
+      "id": "IMG_9088",
+      "date_iso": "2026-07-16",
+      "date_display": "16/7/26",
+      "raw_stamp": "16/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-16.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-16.jpg",
+      "filename": "Timbro_2026-07-16.jpg",
+      "confidence": "high",
+      "notes": "bbox foglio + paint bianco fuori contorno + v5",
+      "width": 1800,
+      "height": 1251,
+      "ratio_pct": 69.5
+    },
     {
       "id": "IMG_9057",
       "date_iso": "2026-07-15",
