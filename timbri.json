@@ -1,7 +1,35 @@
 {
-  "generated_at": "2026-07-21",
-  "count": 132,
+  "generated_at": "2026-07-23",
+  "count": 134,
   "items": [
+    {
+      "id": "IMG_9164",
+      "date_iso": "2026-07-23",
+      "date_display": "23/7/26",
+      "raw_stamp": "23/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-23.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-23.jpg",
+      "filename": "Timbro_2026-07-23.jpg",
+      "confidence": "high",
+      "notes": "bbox foglio + paint bianco fuori contorno + v5",
+      "width": 1800,
+      "height": 1241,
+      "ratio_pct": 68.94
+    },
+    {
+      "id": "IMG_9166",
+      "date_iso": "2026-07-22",
+      "date_display": "22/7/26",
+      "raw_stamp": "22/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-22.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-22.jpg",
+      "filename": "Timbro_2026-07-22.jpg",
+      "confidence": "high",
+      "notes": "bbox foglio + paint bianco fuori contorno + v5",
+      "width": 1800,
+      "height": 1242,
+      "ratio_pct": 69.0
+    },
     {
       "id": "IMG_9144",
       "date_iso": "2026-07-20",
