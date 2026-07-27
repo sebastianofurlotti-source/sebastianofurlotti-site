@@ -1,7 +1,49 @@
 {
-  "generated_at": "2026-07-23",
-  "count": 134,
+  "generated_at": "2026-07-28",
+  "count": 137,
   "items": [
+    {
+      "id": "IMG_9280",
+      "date_iso": "2026-07-26",
+      "date_display": "26/7/26",
+      "raw_stamp": "26/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-26.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-26.jpg",
+      "filename": "Timbro_2026-07-26.jpg",
+      "confidence": "high",
+      "notes": "deskew + maschera foglio (no warp) + fill bianco carta + v5, rot 270",
+      "width": 1292,
+      "height": 1800,
+      "ratio_pct": 139.32
+    },
+    {
+      "id": "IMG_9282",
+      "date_iso": "2026-07-25",
+      "date_display": "25/7/26",
+      "raw_stamp": "25/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-25.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-25.jpg",
+      "filename": "Timbro_2026-07-25.jpg",
+      "confidence": "high",
+      "notes": "deskew + maschera foglio (no warp) + fill bianco carta + v5, rot 270",
+      "width": 1294,
+      "height": 1800,
+      "ratio_pct": 139.1
+    },
+    {
+      "id": "IMG_9279",
+      "date_iso": "2026-07-24",
+      "date_display": "24/7/26",
+      "raw_stamp": "24/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-24.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-24.jpg",
+      "filename": "Timbro_2026-07-24.jpg",
+      "confidence": "high",
+      "notes": "deskew + maschera foglio (no warp) + fill bianco carta + v5",
+      "width": 1800,
+      "height": 1279,
+      "ratio_pct": 71.06
+    },
     {
       "id": "IMG_9164",
       "date_iso": "2026-07-23",
