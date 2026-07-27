@@ -1,7 +1,21 @@
 {
   "generated_at": "2026-07-28",
-  "count": 137,
+  "count": 139,
   "items": [
+    {
+      "id": "IMG_9285",
+      "date_iso": "2026-07-27",
+      "date_display": "27/7/26",
+      "raw_stamp": "27/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-27.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-27.jpg",
+      "filename": "Timbro_2026-07-27.jpg",
+      "confidence": "high",
+      "notes": "v7 (grain fill + non-paper detect): \"SONO UN TIPO ANDANTE IN UN'EPOCA IN CUI NON CI SONO TRONI DA RICONQUISTARE\"",
+      "width": 1800,
+      "height": 1287,
+      "ratio_pct": 71.5
+    },
     {
       "id": "IMG_9280",
       "date_iso": "2026-07-26",
@@ -71,6 +85,20 @@
       "width": 1800,
       "height": 1242,
       "ratio_pct": 69.0
+    },
+    {
+      "id": "IMG_9286",
+      "date_iso": "2026-07-21",
+      "date_display": "21/7/26",
+      "raw_stamp": "21/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-21.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-21.jpg",
+      "filename": "Timbro_2026-07-21.jpg",
+      "confidence": "medium",
+      "notes": "v7 (grain fill + non-paper detect): \"GLI ALLUNGABRODO SONO L'EPIDEMIA DEL MONDO\"",
+      "width": 1800,
+      "height": 1181,
+      "ratio_pct": 65.61
     },
     {
       "id": "IMG_9144",
