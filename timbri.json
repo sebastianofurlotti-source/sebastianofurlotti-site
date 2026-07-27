@@ -11,10 +11,10 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-26.jpg",
       "filename": "Timbro_2026-07-26.jpg",
       "confidence": "high",
-      "notes": "deskew + maschera foglio (no warp) + fill bianco carta + v5, rot 270",
-      "width": 1292,
+      "notes": "deskew + minAreaRect + v5 + fill v5-matched, rot 270",
+      "width": 1291,
       "height": 1800,
-      "ratio_pct": 139.32
+      "ratio_pct": 139.43
     },
     {
       "id": "IMG_9282",
@@ -25,10 +25,10 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-25.jpg",
       "filename": "Timbro_2026-07-25.jpg",
       "confidence": "high",
-      "notes": "deskew + maschera foglio (no warp) + fill bianco carta + v5, rot 270",
-      "width": 1294,
+      "notes": "deskew + minAreaRect (no tentacoli) + v5 + fill v5-matched, rot 270",
+      "width": 1271,
       "height": 1800,
-      "ratio_pct": 139.1
+      "ratio_pct": 141.62
     },
     {
       "id": "IMG_9279",
@@ -39,7 +39,7 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-24.jpg",
       "filename": "Timbro_2026-07-24.jpg",
       "confidence": "high",
-      "notes": "deskew + maschera foglio (no warp) + fill bianco carta + v5",
+      "notes": "deskew + maschera foglio (no warp) + fill v5-matched (no cornice)",
       "width": 1800,
       "height": 1279,
       "ratio_pct": 71.06
