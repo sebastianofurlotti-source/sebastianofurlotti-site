@@ -1,7 +1,49 @@
 {
-  "generated_at": "2026-07-28",
-  "count": 139,
+  "generated_at": "2026-07-31",
+  "count": 142,
   "items": [
+    {
+      "id": "IMG_9311",
+      "date_iso": "2026-07-30",
+      "date_display": "30/7/26",
+      "raw_stamp": "30/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-30.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-30.jpg",
+      "filename": "Timbro_2026-07-30.jpg",
+      "confidence": "high",
+      "notes": "v7: \"SANGRIA / GIULIA E CASTELLINI / GAGLIARDIA SPIANATA\"",
+      "width": 1800,
+      "height": 1244,
+      "ratio_pct": 69.11
+    },
+    {
+      "id": "IMG_9310",
+      "date_iso": "2026-07-29",
+      "date_display": "29/7/26",
+      "raw_stamp": "29/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-29.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-29.jpg",
+      "filename": "Timbro_2026-07-29.jpg",
+      "confidence": "high",
+      "notes": "v7: \"VANESSA / SA GIA' TUTTO\"",
+      "width": 1800,
+      "height": 1253,
+      "ratio_pct": 69.61
+    },
+    {
+      "id": "IMG_9309",
+      "date_iso": "2026-07-28",
+      "date_display": "28/7/26",
+      "raw_stamp": "28/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-28.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-28.jpg",
+      "filename": "Timbro_2026-07-28.jpg",
+      "confidence": "high",
+      "notes": "v7: \"POTOCKI / ORCHIDEA / BRASILE\"",
+      "width": 1800,
+      "height": 1253,
+      "ratio_pct": 69.61
+    },
     {
       "id": "IMG_9285",
       "date_iso": "2026-07-27",
