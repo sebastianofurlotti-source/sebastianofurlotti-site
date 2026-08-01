@@ -1,7 +1,35 @@
 {
-  "generated_at": "2026-07-31",
-  "count": 142,
+  "generated_at": "2026-08-01",
+  "count": 145,
   "items": [
+    {
+      "id": "IMG_9320",
+      "date_iso": "2026-08-01",
+      "date_display": "1/8/26",
+      "raw_stamp": "1/8/2026",
+      "file_web": "foto_definitive/Timbro_2026-08-01.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-08-01.jpg",
+      "filename": "Timbro_2026-08-01.jpg",
+      "confidence": "high",
+      "notes": "v7: \"CASABLANCA / OLBIA\"",
+      "width": 1800,
+      "height": 1308,
+      "ratio_pct": 72.67
+    },
+    {
+      "id": "IMG_9321",
+      "date_iso": "2026-07-31",
+      "date_display": "31/7/26",
+      "raw_stamp": "31/7/2026",
+      "file_web": "foto_definitive/Timbro_2026-07-31.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-07-31.jpg",
+      "filename": "Timbro_2026-07-31.jpg",
+      "confidence": "high",
+      "notes": "v7: \"SPROLOQUIO\"",
+      "width": 1800,
+      "height": 1340,
+      "ratio_pct": 74.44
+    },
     {
       "id": "IMG_9311",
       "date_iso": "2026-07-30",
@@ -1947,6 +1975,20 @@
       "height": 1800,
       "ratio_pct": 138.89,
       "filename": "Timbro_2025-12-11.jpg"
+    },
+    {
+      "id": "IMG_9319",
+      "date_iso": "2025-12-03",
+      "date_display": "3/12/25",
+      "raw_stamp": "3/12/2025",
+      "file_web": "foto_definitive/Timbro_2025-12-03.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2025-12-03.jpg",
+      "filename": "Timbro_2025-12-03.jpg",
+      "confidence": "low",
+      "notes": "v7: composizione caotica letters \"CALVINO / COCCA E / PRESTO IL FIANCO / AL RISO\" (data 3/12/202? ultimo digit ambiguo)",
+      "width": 1800,
+      "height": 1310,
+      "ratio_pct": 72.78
     },
     {
       "id": "IMG_8156",
