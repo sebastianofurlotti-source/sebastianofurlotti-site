@@ -1,7 +1,49 @@
 {
-  "generated_at": "2026-08-01",
-  "count": 145,
+  "generated_at": "2026-08-05",
+  "count": 148,
   "items": [
+    {
+      "id": "IMG_9413",
+      "date_iso": "2026-08-04",
+      "date_display": "4/8/26",
+      "raw_stamp": "4/8/2026",
+      "file_web": "foto_definitive/Timbro_2026-08-04.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-08-04.jpg",
+      "filename": "Timbro_2026-08-04.jpg",
+      "confidence": "high",
+      "notes": "v7: composizione radiale \"UNA MONTAGNA IN MOTO / PIACERE VENEZIA / PIAZZE / CERCASI CAPITAN CASE / POLPI / SBRACAZZATE FORTISSIME / A PRAIA IL CIELO DEL MIO FUTURE / CIAO MAURO\"",
+      "width": 1800,
+      "height": 1295,
+      "ratio_pct": 71.94
+    },
+    {
+      "id": "IMG_9414",
+      "date_iso": "2026-08-03",
+      "date_display": "3/8/26",
+      "raw_stamp": "3/8/2026",
+      "file_web": "foto_definitive/Timbro_2026-08-03.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-08-03.jpg",
+      "filename": "Timbro_2026-08-03.jpg",
+      "confidence": "high",
+      "notes": "v7: \"A QUALCUNO FACCIO SCHIFO, A QUALCUNO NO / GIN SULL'ITAMA / L'ACQUA NEL DESERTO / FILLER DAPPERTUTTO\"",
+      "width": 1800,
+      "height": 1292,
+      "ratio_pct": 71.78
+    },
+    {
+      "id": "IMG_9415",
+      "date_iso": "2026-08-02",
+      "date_display": "2/8/26",
+      "raw_stamp": "2/8/2026",
+      "file_web": "foto_definitive/Timbro_2026-08-02.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-08-02.jpg",
+      "filename": "Timbro_2026-08-02.jpg",
+      "confidence": "high",
+      "notes": "v7: \"ZENO ... / SANGI TACO LUPO / ANNA MICHELLE / CIONDOLI AL TRAMONTO / SCOPRO INELEGANZE / PINETA LOGOPEDISTICA\"",
+      "width": 1800,
+      "height": 1281,
+      "ratio_pct": 71.17
+    },
     {
       "id": "IMG_9320",
       "date_iso": "2026-08-01",
