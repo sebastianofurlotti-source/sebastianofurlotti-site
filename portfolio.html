@@ -676,7 +676,7 @@ section.page.portfolio-section{
   padding: clamp(80px, 9vw, 132px) var(--gutter) clamp(48px, 6vw, 88px);
 }
 section#portfolio-top{
-  padding-top: clamp(150px, 17vw, 230px);
+  padding-top: clamp(104px, 11vw, 152px);
   padding-bottom: clamp(30px, 4vw, 56px);
 }
 
@@ -750,7 +750,7 @@ section#portfolio-top{
 }
 
 /* ─── griglie a due colonne ───────────────────────────────────────── */
-.duo, .quad, .timbri-row{
+.duo, .quad{
   width: var(--col-pair);
   margin: 0 auto;
   display: grid;
@@ -760,7 +760,18 @@ section#portfolio-top{
   align-items: end;
   justify-items: center;
 }
-.duo .work, .quad .work, .timbri-row .work{ width: auto; }
+.duo .work, .quad .work{ width: auto; }
+
+/* riga di timbri: larghezze proporzionali al formato, altezze identiche */
+.timbri-row{
+  width: min(var(--rw, 1120px), var(--col-pair));
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-pair);
+}
+.timbri-row .work{ flex: var(--arn, 1) 1 0%; width: auto; min-width: 0; }
+.timbri-row .work-frame{ width: 100%; }
 .quad.verso, .duo.verso{ margin-top: clamp(32px, 4vw, 52px); align-items: start; }
 
 .verso-note, .process-note{
@@ -874,14 +885,16 @@ section#portfolio-top{
 }
 @media (max-width: 560px){
   /* dittici e timbri a tutta larghezza: due colonne su telefono sono troppo piccole */
-  .duo, .timbri-row{ grid-template-columns: 1fr; row-gap: clamp(48px, 11vw, 76px); }
-  .duo .work-frame, .timbri-row .work-frame{ width: 100%; }
+  .duo{ grid-template-columns: 1fr; row-gap: clamp(48px, 11vw, 76px); }
+  .duo .work-frame{ width: 100%; }
+  .timbri-row{ flex-direction: column; gap: clamp(48px, 11vw, 76px); }
+  .timbri-row .work{ width: 100%; flex: 0 0 auto; }
   .work-caption{ margin-top: 16px; }
   .work-label{ font-size: 12.5px; padding: 5px 12px; }
   .work-tech{ font-size: 11.5px; margin-top: 8px; }
   .verso-note, .process-note{ font-size: 11.5px; }
   .pf-gallery{ gap: clamp(64px, 15vw, 104px); }
-  section#portfolio-top{ padding-top: clamp(126px, 28vw, 172px); }
+  section#portfolio-top{ padding-top: clamp(94px, 21vw, 126px); }
 }
 </style>
 </head>
@@ -933,7 +946,7 @@ section#portfolio-top{
   </div>
 
   <div class="pf-gallery">
-    <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.7512));">
+    <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.7512 - 1px));">
     <figure class="work" style="--ar: 1183/1600; --arn: 0.7394;">
       <div class="work-frame">
         <img src="portfolio/troppo-vistoso.jpg"
@@ -1079,7 +1092,7 @@ section#portfolio-top{
       </figcaption>
     </figure>
 
-    <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.4173));">
+    <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.4173 - 1px));">
     <figure class="work" style="--ar: 951/671; --arn: 1.4173;">
       <div class="work-frame">
         <img src="portfolio/senza-titolo-2023.jpg"
@@ -1108,7 +1121,7 @@ section#portfolio-top{
     </figure>
     </div>
 
-    <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.9875));">
+    <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.9875 - 1px));">
     <figure class="work" style="--ar: 1286/1600; --arn: 0.8037;">
       <div class="work-frame">
         <img src="portfolio/ditirambo.jpg"
@@ -1182,7 +1195,7 @@ section#portfolio-top{
     <p>Se alle prime prove ricevute ho reagito con titubanza, una volta compreso quanto fossero moderne in queste loro interpretazioni queste donne, ne sono rimasto entusiasta e ho lasciato che continuassero a tessere nel loro modo di vedere le cose. Siamo, in queste opere, senza dubbio co-autori.</p>
   </div>
 
-  <div class="quad" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.8438));">
+  <div class="quad" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.8438 - 1px));">
     <figure class="work" style="--ar: 1177/1600; --arn: 0.7356;">
       <div class="work-frame">
         <img src="portfolio/arazzo-1.jpg"
@@ -1225,7 +1238,7 @@ section#portfolio-top{
     <span class="work-tech">Lana vergine cucita a mano</span>
   </div>
 
-  <div class="process-row" style="--h: min(168px, calc((min(900px, 92vw) - (2 * var(--gap-proc))) / 3 / 1.3333));">
+  <div class="process-row" style="--h: min(168px, calc((min(900px, 92vw) - (2 * var(--gap-proc))) / 3 / 1.3333 - 1px));">
     <figure class="work" style="--ar: 1200/1600; --arn: 0.7500;">
       <div class="work-frame">
         <img src="portfolio/thumbs/processo-1.jpg"
@@ -1269,7 +1282,7 @@ section#portfolio-top{
       </div>
     </figure>
   </div>
-  <div class="process-note">Kairouan, Tunisia &mdash; il telaio, le lane, le campionature dei colori</div>
+  <div class="process-note">Kairouan, Tunisia</div>
 </section>
 
 <!-- ═══ DATE ══════════════════════════════════════════════════════════ -->
@@ -1311,7 +1324,7 @@ section#portfolio-top{
     </figure>
 
     <div class="set">
-      <div class="quad" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.8956));">
+      <div class="quad" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.8956 - 1px));">
     <figure class="work" style="--ar: 1405/1600; --arn: 0.8781;">
       <div class="work-frame">
         <img src="portfolio/acq-2025-02-01-1.jpg"
@@ -1354,7 +1367,7 @@ section#portfolio-top{
     <span class="work-tech">Acquerello su cartoncino</span>
   </div>
 
-      <div class="quad verso" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.9012));">
+      <div class="quad verso" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.9012 - 1px));">
     <figure class="work" style="--ar: 1410/1600; --arn: 0.8812;">
       <div class="work-frame">
         <img src="portfolio/acq-retro-1.jpg"
@@ -1392,11 +1405,10 @@ section#portfolio-top{
       </div>
     </figure>
       </div>
-      <div class="verso-note">Sul retro di ogni foglio, il diario manoscritto del giorno</div>
     </div>
 
     <div class="set">
-      <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.1730));">
+      <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.1730 - 1px));">
     <figure class="work" style="--ar: 1600/1364; --arn: 1.1730;">
       <div class="work-frame">
         <img src="portfolio/past-2025-02-21-1.jpg"
@@ -1421,7 +1433,7 @@ section#portfolio-top{
     <span class="work-tech">Pastello su cartoncino</span>
   </div>
 
-      <div class="duo verso" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.1791));">
+      <div class="duo verso" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.1791 - 1px));">
     <figure class="work" style="--ar: 1600/1361; --arn: 1.1756;">
       <div class="work-frame">
         <img src="portfolio/past-retro-1.jpg"
@@ -1441,7 +1453,6 @@ section#portfolio-top{
       </div>
     </figure>
       </div>
-      <div class="verso-note">Sul retro di ogni foglio, il diario manoscritto del giorno</div>
     </div>
   </div>
 </section>
@@ -1455,9 +1466,9 @@ section#portfolio-top{
     <div class="double-rule bottom" aria-hidden="true"></div>
   </div>
 
-  <div class="timbri-lead">Opere su carta. Ogni foglio porta impressa, a timbro, la data del giorno in cui &egrave; stato fatto: un diario quotidiano che intreccia vita e arte nel ripetersi del presente.</div>
+  <div class="timbri-lead">Opere su carta. Ogni foglio porta impressa a timbro la data del giorno in cui &egrave; stato fatto.</div>
 
-  <div class="timbri-row" style="--h: min(400px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.3932));">
+  <div class="timbri-row" style="--rw: 1150px;">
       <figure class="work" style="--ar: 1800/1319; --arn: 1.3647;">
         <div class="work-frame">
           <img src="foto_definitive/Timbro_2025-02-12.jpg"
@@ -1468,6 +1479,19 @@ section#portfolio-top{
         </div>
         <figcaption class="work-caption"><span class="work-date">12/2/25</span></figcaption>
       </figure>
+      <figure class="work" style="--ar: 1785/1275; --arn: 1.4000;">
+        <div class="work-frame">
+          <img src="foto_definitive/Timbro_2026-02-11.jpg"
+               srcset="foto_definitive/thumbs/Timbro_2026-02-11.jpg 800w, foto_definitive/Timbro_2026-02-11.jpg 1785w"
+               sizes="(max-width: 560px) 44vw, 540px"
+               width="1785" height="1275"
+               alt="11/2/26" loading="lazy" decoding="async" />
+        </div>
+        <figcaption class="work-caption"><span class="work-date">11/2/26</span></figcaption>
+      </figure>
+  </div>
+
+  <div class="timbri-row" style="--rw: 1191px;">
       <figure class="work" style="--ar: 1800/1292; --arn: 1.3932;">
         <div class="work-frame">
           <img src="foto_definitive/Timbro_2026-04-09.jpg"
@@ -1478,9 +1502,19 @@ section#portfolio-top{
         </div>
         <figcaption class="work-caption"><span class="work-date">9/4/26</span></figcaption>
       </figure>
+      <figure class="work" style="--ar: 1800/1220; --arn: 1.4754;">
+        <div class="work-frame">
+          <img src="foto_definitive/Timbro_2026-06-20.jpg"
+               srcset="foto_definitive/thumbs/Timbro_2026-06-20.jpg 800w, foto_definitive/Timbro_2026-06-20.jpg 1800w"
+               sizes="(max-width: 560px) 44vw, 540px"
+               width="1800" height="1220"
+               alt="20/6/26" loading="lazy" decoding="async" />
+        </div>
+        <figcaption class="work-caption"><span class="work-date">20/6/26</span></figcaption>
+      </figure>
   </div>
 
-  <div class="timbri-row" style="--h: min(400px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.3997));">
+  <div class="timbri-row" style="--rw: 1152px;">
       <figure class="work" style="--ar: 1800/1286; --arn: 1.3997;">
         <div class="work-frame">
           <img src="foto_definitive/Timbro_2026-07-02.jpg"
