@@ -661,25 +661,34 @@ section#timbri{ padding-top: clamp(170px, 19vw, 250px); }
 }
 
 /* ════════════════════════════════════════════════════════════════════
-   PORTFOLIO
+   PORTFOLIO — impaginazione da catalogo
    ════════════════════════════════════════════════════════════════════ */
 
-section.page.portfolio-section{
-  padding: clamp(70px, 8vw, 110px) var(--gutter) clamp(40px, 6vw, 80px);
+:root{
+  --col-solo:  min(880px, 92vw);
+  --col-pair:  min(1120px, 94vw);
+  --col-proc:  min(900px, 92vw);
+  --gap-pair:  clamp(20px, 2.8vw, 44px);
+  --gap-proc:  clamp(8px, 1.3vw, 18px);
 }
-section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: clamp(30px, 4vw, 50px); }
 
-/* ─── FRAME: altezza costante → tutte le opere alla stessa scala ───── */
+section.page.portfolio-section{
+  padding: clamp(80px, 9vw, 132px) var(--gutter) clamp(48px, 6vw, 88px);
+}
+section#portfolio-top{
+  padding-top: clamp(150px, 17vw, 230px);
+  padding-bottom: clamp(30px, 4vw, 56px);
+}
+
+/* ─── riquadri: misure calcolate, mai ritagli ─────────────────────── */
 .portfolio-section .work-frame{
-  --h: clamp(300px, 50vh, 500px);
-  width: min(100%, calc(var(--h) * var(--arn, 1)));
+  width: min(100%, var(--w, calc(var(--h, 400px) * var(--arn, 1))));
   height: auto;
   aspect-ratio: var(--ar, 1);
   margin: 0 auto;
   background: transparent;
 }
 .portfolio-section .work-frame::before{ display: none; }
-/* contain: l'immagine non viene MAI ritagliata */
 .portfolio-section .work-frame img{
   position: static;
   width: 100%; height: 100%;
@@ -687,13 +696,8 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 }
 .portfolio-section .work-frame:hover img{ transform: none; filter: none; }
 
-.duo .work-frame,
-.quad .work-frame{ --h: clamp(210px, 30vh, 340px); }
-.process-row .work-frame{ --h: clamp(84px, 11vw, 132px); }
-.timbri-strip .work-frame{ --h: clamp(150px, 19vw, 230px); }
-.portrait-wrap .work-frame{ --h: clamp(280px, 44vh, 440px); }
-
-/* ─── titoli: righe statiche, nessuna animazione ──────────────────── */
+/* ─── titoli di sezione: statici ──────────────────────────────────── */
+.portfolio-section .section-head{ margin-bottom: clamp(54px, 7vw, 92px); }
 .portfolio-section .section-head .double-rule::before,
 .portfolio-section .section-head .double-rule::after{
   transform: scaleX(1);
@@ -702,84 +706,95 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 .portfolio-section .section-head h2,
 .portfolio-section .section-head .roman,
 .portfolio-section .section-head .sub{ opacity: 1; transform: none; transition: none; }
+.portfolio-section .section-head .roman{
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+  color: var(--soft);
+}
+.portfolio-section .section-head h2{ letter-spacing: 0.012em; }
 .portfolio-section .work-date{ opacity: 1; transform: none; transition: none; }
 
 /* ─── didascalie ──────────────────────────────────────────────────── */
+.work-caption{ flex-direction: column; margin-top: 22px; }
 .work-label{
   font-family: var(--didone);
   font-style: italic;
   font-weight: 400;
-  font-size: 15px;
-  letter-spacing: 0.02em;
+  font-size: 14.5px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
   color: var(--ink);
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
-  padding: 6px 18px;
+  padding: 6px 16px;
   display: inline-block;
   opacity: 1;
-  transform: none;
   transition: none;
 }
 .work-tech{
   display: block;
-  margin-top: 10px;
+  margin-top: 9px;
   font-family: var(--didone);
   font-style: italic;
-  font-size: 13px;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
   color: var(--mute);
-  letter-spacing: 0.04em;
   opacity: 1;
   transition: none;
 }
-.work-caption{ flex-direction: column; }
-
 .group-caption{
-  width: var(--col-wide);
-  margin: clamp(22px, 3vw, 34px) auto 0;
+  width: var(--col-pair);
+  margin: clamp(26px, 3vw, 38px) auto 0;
   text-align: center;
 }
 
-/* ─── griglie ─────────────────────────────────────────────────────── */
-.duo, .quad{
-  width: var(--col-wide);
+/* ─── griglie a due colonne ───────────────────────────────────────── */
+.duo, .quad, .timbri-row{
+  width: var(--col-pair);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 52px);
+  column-gap: var(--gap-pair);
+  row-gap: clamp(40px, 4.6vw, 68px);
   align-items: end;
   justify-items: center;
 }
-.duo .work, .quad .work{ width: auto; }
-.quad.verso, .duo.verso{ margin-top: clamp(30px, 4vw, 48px); align-items: start; }
+.duo .work, .quad .work, .timbri-row .work{ width: auto; }
+.quad.verso, .duo.verso{ margin-top: clamp(32px, 4vw, 52px); align-items: start; }
 
-.verso-note{
-  width: var(--col);
-  margin: 16px auto 0;
+.verso-note, .process-note{
+  width: var(--col-pair);
+  margin: 18px auto 0;
   text-align: center;
   font-family: var(--didone);
   font-style: italic;
-  font-size: 13px;
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
   color: var(--mute);
-  letter-spacing: 0.04em;
 }
 
 .pf-gallery{
   display: flex;
   flex-direction: column;
-  gap: clamp(70px, 9vw, 118px);
+  gap: clamp(84px, 10vw, 142px);
   align-items: center;
 }
+.pf-gallery > .work{ width: var(--col-solo); }
 .set{ width: 100%; }
 
-/* ─── citazione ───────────────────────────────────────────────────── */
-.quote-wrap{ width: var(--col); margin: 0 auto clamp(56px, 8vw, 90px); }
+/* ─── testi ───────────────────────────────────────────────────────── */
+.bio-wrap .bio-body{ max-width: 64ch; font-size: 19px; line-height: 1.72; }
+.bio-wrap .bio-body p + p{ margin-top: 1.25em; }
+
+.quote-wrap{ width: var(--col); margin: 0 auto clamp(58px, 7vw, 92px); }
 .quote{
-  max-width: 60ch;
+  max-width: 58ch;
   margin: 0 auto;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 18.5px;
-  line-height: 1.75;
+  font-size: 18px;
+  line-height: 1.8;
   color: var(--ink);
   text-align: left;
 }
@@ -789,97 +804,84 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   text-align: center;
   font-family: var(--didone);
   font-style: normal;
-  font-size: 64px;
+  font-size: 60px;
   line-height: .6;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   color: var(--ink);
 }
 
 .section-body{
   max-width: 62ch;
-  margin: 0 auto clamp(56px, 8vw, 90px);
+  margin: 0 auto clamp(58px, 7vw, 92px);
   font-family: var(--serif);
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--ink);
 }
-.section-body p + p{ margin-top: 1.2em; text-indent: 1.6em; }
+.section-body p + p{ margin-top: 1.25em; text-indent: 1.6em; }
 
 /* ─── processo ────────────────────────────────────────────────────── */
 .process-row{
-  width: var(--col-wide);
-  margin: clamp(44px, 6vw, 70px) auto 0;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: clamp(8px, 1.4vw, 16px);
-  justify-items: center;
-  align-items: center;
-}
-.process-row .work{ width: auto; }
-.process-note{
-  width: var(--col-wide);
-  margin: 16px auto 0;
-  text-align: center;
-  font-family: var(--didone);
-  font-style: italic;
-  font-size: 13px;
-  color: var(--mute);
-  letter-spacing: 0.04em;
-}
-
-/* ─── timbri ──────────────────────────────────────────────────────── */
-.timbri-strip{
-  width: var(--col-wide);
-  margin: 0 auto;
+  width: var(--col-proc);
+  margin: clamp(48px, 6vw, 76px) auto 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(26px, 4vw, 50px) clamp(16px, 2.6vw, 32px);
+  column-gap: var(--gap-proc);
+  row-gap: clamp(14px, 1.8vw, 26px);
   justify-items: center;
   align-items: end;
 }
-.timbri-strip .work{ width: auto; }
-.timbri-cta{ text-align: center; margin-top: clamp(46px, 6vw, 70px); }
-.timbri-cta a{
-  font-family: var(--didone);
-  font-style: italic;
-  font-size: 16px;
-  letter-spacing: 0.06em;
-  color: var(--ink);
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-  padding: 9px 26px;
-  display: inline-block;
-  transition: letter-spacing .5s var(--e-out);
-}
-.timbri-cta a:hover{ letter-spacing: 0.12em; }
+.process-row .work{ width: auto; }
+
+/* ─── timbri ──────────────────────────────────────────────────────── */
 .timbri-lead{
-  max-width: 54ch;
-  margin: 0 auto clamp(48px, 7vw, 78px);
+  max-width: 50ch;
+  margin: 0 auto clamp(48px, 6vw, 78px);
   text-align: center;
   font-family: var(--serif);
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--ink);
 }
+.timbri-row + .timbri-row{ margin-top: clamp(40px, 4.6vw, 68px); }
+
+.timbri-cta{
+  width: var(--col-pair);
+  margin: clamp(56px, 7vw, 92px) auto 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 36px);
+}
+.timbri-cta::before,
+.timbri-cta::after{ content: ""; flex: 1 1 auto; height: 1px; background: var(--ink); }
+.timbri-cta a{
+  flex: 0 0 auto;
+  font-family: var(--didone);
+  font-style: italic;
+  font-size: clamp(15px, 1.7vw, 19px);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  transition: letter-spacing .5s var(--e-out);
+}
+.timbri-cta a:hover{ letter-spacing: 0.16em; }
 
 /* ─── responsive ──────────────────────────────────────────────────── */
 @media (max-width: 820px){
-  .process-row{ grid-template-columns: repeat(3, 1fr); }
-  .quote{ font-size: 16.5px; }
-  .section-body{ font-size: 16px; }
-  .portfolio-section .work-frame{ --h: clamp(240px, 40vh, 380px); }
-  .duo .work-frame, .quad .work-frame{ --h: clamp(170px, 24vh, 260px); }
+  .quote{ font-size: 16.5px; line-height: 1.75; }
+  .section-body, .timbri-lead{ font-size: 16.5px; }
+  .bio-wrap .bio-body{ font-size: 17px; }
+
 }
 @media (max-width: 560px){
-  .duo, .quad{ grid-template-columns: 1fr 1fr; gap: clamp(14px, 3vw, 24px); }
-  .timbri-strip{ grid-template-columns: 1fr 1fr; }
-  .portfolio-section .work-frame{ --h: clamp(210px, 34vh, 300px); }
-  .duo .work-frame, .quad .work-frame{ --h: clamp(130px, 21vh, 190px); }
-  .timbri-strip .work-frame{ --h: clamp(120px, 20vh, 170px); }
-  .process-row .work-frame{ --h: clamp(70px, 15vw, 100px); }
+  /* dittici e timbri a tutta larghezza: due colonne su telefono sono troppo piccole */
+  .duo, .timbri-row{ grid-template-columns: 1fr; row-gap: clamp(48px, 11vw, 76px); }
+  .duo .work-frame, .timbri-row .work-frame{ width: 100%; }
+  .work-caption{ margin-top: 16px; }
   .work-label{ font-size: 12.5px; padding: 5px 12px; }
-  .work-tech{ font-size: 12px; margin-top: 8px; }
-  section#portfolio-top{ padding-top: clamp(130px, 28vw, 175px); }
+  .work-tech{ font-size: 11.5px; margin-top: 8px; }
+  .verso-note, .process-note{ font-size: 11.5px; }
+  .pf-gallery{ gap: clamp(64px, 15vw, 104px); }
+  section#portfolio-top{ padding-top: clamp(126px, 28vw, 172px); }
 }
 </style>
 </head>
@@ -899,16 +901,8 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   </nav>
 </header>
 
-<!-- ═══ PORTFOLIO / BIO ═══════════════════════════════════════════════ -->
+<!-- ═══ BIOGRAFIA ═════════════════════════════════════════════════════ -->
 <section class="page portfolio-section" id="portfolio-top">
-  <div class="section-head">
-    <div class="double-rule" aria-hidden="true"></div>
-    <div class="roman">2021 &mdash; 2026</div>
-    <h2>Portfolio</h2>
-    <div class="sub">Dipinti &middot; Arazzi &middot; Opere su carta</div>
-    <div class="double-rule bottom" aria-hidden="true"></div>
-  </div>
-
   <div class="bio-wrap">
     <div class="bio-body">
       <p><span class="dropcap">S</span>ebastiano Furlotti nasce nel 2004 a Parma. Nel 2021 espone l&rsquo;arazzo monumentale <em>Guernica</em> sulla facciata del Palazzo della Provincia della propria citt&agrave; natale; l&rsquo;opera viene poi presentata al Museo ADI&nbsp;&ndash;&nbsp;Compasso d&rsquo;Oro di Milano nell&rsquo;ambito della mostra collettiva <em>Women for Justice</em>, e successivamente nel chiostro del Monastero di San Nicol&ograve; al Lido di Venezia. Nel 2022 partecipa alla mostra <em>Di qua dal paradiso</em> presso lo Spazio Camarini di Mantova e presenta l&rsquo;arazzo <em>Per chi suona la campana</em> con la Galleria Centro Steccata, esposto poi a Roma nel complesso di Santa Maria della Piet&agrave;. Nel 2023 prende parte alla collettiva <em>Quadrinomi</em> a Rovereto, accanto alle opere di Riccardo Schweizer e Giorgio Conta, con testi di Maurizio Scudiero e Michelangelo Lupo.</p>
@@ -917,11 +911,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   </div>
 
   <div class="pf-gallery portrait-wrap">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/968; --arn: 1.6529;">
+    <figure class="work" style="--ar: 1600/968; --arn: 1.6529; --w: 704px;">
+      <div class="work-frame">
         <img src="portfolio/ritratto.jpg"
              srcset="portfolio/thumbs/ritratto.jpg 800w, portfolio/ritratto.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1600" height="968"
              alt="Ritratto di Sebastiano Furlotti" loading="lazy" decoding="async" />
       </div>
@@ -939,12 +933,12 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   </div>
 
   <div class="pf-gallery">
-    <div class="duo">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1183/1600; --arn: 0.7394;">
+    <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.7512));">
+    <figure class="work" style="--ar: 1183/1600; --arn: 0.7394;">
+      <div class="work-frame">
         <img src="portfolio/troppo-vistoso.jpg"
              srcset="portfolio/thumbs/troppo-vistoso.jpg 800w, portfolio/troppo-vistoso.jpg 1183w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1183" height="1600"
              alt="Troppo vistoso, 2021" loading="lazy" decoding="async" />
       </div>
@@ -953,11 +947,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
         <span class="work-tech">Acrilico su tela con applicazioni &middot; CP</span>
       </figcaption>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1202/1600; --arn: 0.7512;">
+    <figure class="work" style="--ar: 1202/1600; --arn: 0.7512;">
+      <div class="work-frame">
         <img src="portfolio/una-citta-viva.jpg"
              srcset="portfolio/thumbs/una-citta-viva.jpg 800w, portfolio/una-citta-viva.jpg 1202w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1202" height="1600"
              alt="Una città viva e attiva, 2021" loading="lazy" decoding="async" />
       </div>
@@ -968,11 +962,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     </figure>
     </div>
 
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1582; --arn: 1.0114;">
+    <figure class="work" style="--ar: 1600/1582; --arn: 1.0114; --w: 613px;">
+      <div class="work-frame">
         <img src="portfolio/gli-intrusi.jpg"
              srcset="portfolio/thumbs/gli-intrusi.jpg 800w, portfolio/gli-intrusi.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1600" height="1582"
              alt="Gli intrusi, 2021" loading="lazy" decoding="async" />
       </div>
@@ -998,11 +992,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   </div>
 
   <div class="pf-gallery">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1058; --arn: 1.5123;">
+    <figure class="work" style="--ar: 1600/1058; --arn: 1.5123; --w: 750px;">
+      <div class="work-frame">
         <img src="portfolio/guernica-parma.jpg"
              srcset="portfolio/thumbs/guernica-parma.jpg 800w, portfolio/guernica-parma.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1600" height="1058"
              alt="Guernica sulla facciata del Palazzo della Provincia di Parma" loading="lazy" decoding="async" />
       </div>
@@ -1010,11 +1004,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
         <span class="work-label">Palazzo della Provincia, Parma</span>
       </figcaption>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1200; --arn: 1.3333;">
+    <figure class="work" style="--ar: 1600/1200; --arn: 1.3333; --w: 704px;">
+      <div class="work-frame">
         <img src="portfolio/guernica-interno.jpg"
              srcset="portfolio/thumbs/guernica-interno.jpg 800w, portfolio/guernica-interno.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1600" height="1200"
              alt="Guernica in allestimento" loading="lazy" decoding="async" />
       </div>
@@ -1023,11 +1017,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
         <span class="work-tech">Patchwork</span>
       </figcaption>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1067; --arn: 1.4995;">
+    <figure class="work" style="--ar: 1600/1067; --arn: 1.4995; --w: 747px;">
+      <div class="work-frame">
         <img src="portfolio/campana-drone.jpg"
              srcset="portfolio/thumbs/campana-drone.jpg 800w, portfolio/campana-drone.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1600" height="1067"
              alt="Guernica vista dall’alto" loading="lazy" decoding="async" />
       </div>
@@ -1045,11 +1039,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   </div>
 
   <div class="pf-gallery">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1291/1600; --arn: 0.8069;">
+    <figure class="work" style="--ar: 1291/1600; --arn: 0.8069; --w: 533px;">
+      <div class="work-frame">
         <img src="portfolio/campana-dettaglio.jpg"
              srcset="portfolio/thumbs/campana-dettaglio.jpg 800w, portfolio/campana-dettaglio.jpg 1291w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1291" height="1600"
              alt="Per chi suona la campana, 2022" loading="lazy" decoding="async" />
       </div>
@@ -1071,11 +1065,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   </div>
 
   <div class="pf-gallery">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1575; --arn: 1.0159;">
+    <figure class="work" style="--ar: 1600/1575; --arn: 1.0159; --w: 615px;">
+      <div class="work-frame">
         <img src="portfolio/balconata.jpg"
              srcset="portfolio/thumbs/balconata.jpg 800w, portfolio/balconata.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1600" height="1575"
              alt="La balconata dell'ipocrisia, 2022" loading="lazy" decoding="async" />
       </div>
@@ -1085,12 +1079,12 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </figcaption>
     </figure>
 
-    <div class="duo">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 951/671; --arn: 1.4173;">
+    <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.4173));">
+    <figure class="work" style="--ar: 951/671; --arn: 1.4173;">
+      <div class="work-frame">
         <img src="portfolio/senza-titolo-2023.jpg"
              srcset="portfolio/thumbs/senza-titolo-2023.jpg 800w, portfolio/senza-titolo-2023.jpg 951w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="951" height="671"
              alt="Senza titolo, 2023" loading="lazy" decoding="async" />
       </div>
@@ -1099,11 +1093,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
         <span class="work-tech">Acrilico su cartoncino &middot; CP</span>
       </figcaption>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1591/1600; --arn: 0.9944;">
+    <figure class="work" style="--ar: 1591/1600; --arn: 0.9944;">
+      <div class="work-frame">
         <img src="portfolio/montagna-bianca.jpg"
              srcset="portfolio/thumbs/montagna-bianca.jpg 800w, portfolio/montagna-bianca.jpg 1591w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1591" height="1600"
              alt="La montagna bianca, 2023" loading="lazy" decoding="async" />
       </div>
@@ -1114,12 +1108,12 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     </figure>
     </div>
 
-    <div class="duo">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1286/1600; --arn: 0.8037;">
+    <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.9875));">
+    <figure class="work" style="--ar: 1286/1600; --arn: 0.8037;">
+      <div class="work-frame">
         <img src="portfolio/ditirambo.jpg"
              srcset="portfolio/thumbs/ditirambo.jpg 800w, portfolio/ditirambo.jpg 1286w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1286" height="1600"
              alt="Ditirambo, 2023" loading="lazy" decoding="async" />
       </div>
@@ -1128,11 +1122,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
         <span class="work-tech">Olio su tela &middot; CP</span>
       </figcaption>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1580/1600; --arn: 0.9875;">
+    <figure class="work" style="--ar: 1580/1600; --arn: 0.9875;">
+      <div class="work-frame">
         <img src="portfolio/tre-carte-blu.jpg"
              srcset="portfolio/thumbs/tre-carte-blu.jpg 800w, portfolio/tre-carte-blu.jpg 1580w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1580" height="1600"
              alt="Tre carte blu, 2023" loading="lazy" decoding="async" />
       </div>
@@ -1143,11 +1137,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     </figure>
     </div>
 
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1359; --arn: 1.1773;">
+    <figure class="work" style="--ar: 1600/1359; --arn: 1.1773; --w: 662px;">
+      <div class="work-frame">
         <img src="portfolio/colori-coloniali.jpg"
              srcset="portfolio/thumbs/colori-coloniali.jpg 800w, portfolio/colori-coloniali.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1600" height="1359"
              alt="Colori coloniali, 2023" loading="lazy" decoding="async" />
       </div>
@@ -1157,11 +1151,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </figcaption>
     </figure>
 
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1058; --arn: 1.5123;">
+    <figure class="work" style="--ar: 1600/1058; --arn: 1.5123; --w: 750px;">
+      <div class="work-frame">
         <img src="portfolio/strade-affollate.jpg"
              srcset="portfolio/thumbs/strade-affollate.jpg 800w, portfolio/strade-affollate.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1600" height="1058"
              alt="Strade affollate, 2023" loading="lazy" decoding="async" />
       </div>
@@ -1188,39 +1182,39 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     <p>Se alle prime prove ricevute ho reagito con titubanza, una volta compreso quanto fossero moderne in queste loro interpretazioni queste donne, ne sono rimasto entusiasta e ho lasciato che continuassero a tessere nel loro modo di vedere le cose. Siamo, in queste opere, senza dubbio co-autori.</p>
   </div>
 
-  <div class="quad">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1177/1600; --arn: 0.7356;">
+  <div class="quad" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.8438));">
+    <figure class="work" style="--ar: 1177/1600; --arn: 0.7356;">
+      <div class="work-frame">
         <img src="portfolio/arazzo-1.jpg"
              srcset="portfolio/thumbs/arazzo-1.jpg 800w, portfolio/arazzo-1.jpg 1177w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1177" height="1600"
              alt="Arazzo, 2024" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1133/1600; --arn: 0.7081;">
+    <figure class="work" style="--ar: 1133/1600; --arn: 0.7081;">
+      <div class="work-frame">
         <img src="portfolio/arazzo-2.jpg"
              srcset="portfolio/thumbs/arazzo-2.jpg 800w, portfolio/arazzo-2.jpg 1133w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1133" height="1600"
              alt="Arazzo, 2024" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1350/1600; --arn: 0.8438;">
+    <figure class="work" style="--ar: 1350/1600; --arn: 0.8438;">
+      <div class="work-frame">
         <img src="portfolio/arazzo-3.jpg"
              srcset="portfolio/thumbs/arazzo-3.jpg 800w, portfolio/arazzo-3.jpg 1350w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1350" height="1600"
              alt="Arazzo, 2024" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1290/1600; --arn: 0.8063;">
+    <figure class="work" style="--ar: 1290/1600; --arn: 0.8063;">
+      <div class="work-frame">
         <img src="portfolio/arazzo-4.jpg"
              srcset="portfolio/thumbs/arazzo-4.jpg 800w, portfolio/arazzo-4.jpg 1290w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1290" height="1600"
              alt="Arazzo, 2024" loading="lazy" decoding="async" />
       </div>
@@ -1231,44 +1225,44 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     <span class="work-tech">Lana vergine cucita a mano</span>
   </div>
 
-  <div class="process-row">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
+  <div class="process-row" style="--h: min(168px, calc((min(900px, 92vw) - (2 * var(--gap-proc))) / 3 / 1.3333));">
+    <figure class="work" style="--ar: 1200/1600; --arn: 0.7500;">
+      <div class="work-frame">
         <img src="portfolio/thumbs/processo-1.jpg"
              width="1200" height="1600"
              alt="Il telaio" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
+    <figure class="work" style="--ar: 1200/1600; --arn: 0.7500;">
+      <div class="work-frame">
         <img src="portfolio/thumbs/processo-2.jpg"
              width="1200" height="1600"
              alt="La tessitura" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1200; --arn: 1.3333;">
+    <figure class="work" style="--ar: 1600/1200; --arn: 1.3333;">
+      <div class="work-frame">
         <img src="portfolio/thumbs/processo-3.jpg"
              width="1600" height="1200"
              alt="Le lane" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
+    <figure class="work" style="--ar: 1200/1600; --arn: 0.7500;">
+      <div class="work-frame">
         <img src="portfolio/thumbs/processo-4.jpg"
              width="1200" height="1600"
              alt="Kairouan" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
+    <figure class="work" style="--ar: 1200/1600; --arn: 0.7500;">
+      <div class="work-frame">
         <img src="portfolio/thumbs/processo-5.jpg"
              width="1200" height="1600"
              alt="Le campionature dei colori" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
+    <figure class="work" style="--ar: 1200/1600; --arn: 0.7500;">
+      <div class="work-frame">
         <img src="portfolio/thumbs/processo-6.jpg"
              width="1200" height="1600"
              alt="Le campionature dei colori" loading="lazy" decoding="async" />
@@ -1288,11 +1282,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   </div>
 
   <div class="pf-gallery">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1173/1600; --arn: 0.7331;">
+    <figure class="work" style="--ar: 1173/1600; --arn: 0.7331; --w: 484px;">
+      <div class="work-frame">
         <img src="portfolio/olio-2024-12-23.jpg"
              srcset="portfolio/thumbs/olio-2024-12-23.jpg 800w, portfolio/olio-2024-12-23.jpg 1173w"
-             sizes="(max-width: 720px) 92vw, 720px"
+             sizes="(max-width: 720px) 92vw, 760px"
              width="1173" height="1600"
              alt="23/12/2024 I" loading="lazy" decoding="async" />
       </div>
@@ -1302,12 +1296,12 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </figcaption>
     </figure>
 
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1298; --arn: 1.2327;">
+    <figure class="work" style="--ar: 1600/1309; --arn: 1.2223; --w: 674px;">
+      <div class="work-frame">
         <img src="portfolio/pastello-2025-02-01.jpg"
              srcset="portfolio/thumbs/pastello-2025-02-01.jpg 800w, portfolio/pastello-2025-02-01.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
-             width="1600" height="1298"
+             sizes="(max-width: 720px) 92vw, 760px"
+             width="1600" height="1309"
              alt="1/2/2025 I" loading="lazy" decoding="async" />
       </div>
       <figcaption class="work-caption">
@@ -1317,39 +1311,39 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     </figure>
 
     <div class="set">
-      <div class="quad">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1405/1600; --arn: 0.8781;">
+      <div class="quad" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.8956));">
+    <figure class="work" style="--ar: 1405/1600; --arn: 0.8781;">
+      <div class="work-frame">
         <img src="portfolio/acq-2025-02-01-1.jpg"
              srcset="portfolio/thumbs/acq-2025-02-01-1.jpg 800w, portfolio/acq-2025-02-01-1.jpg 1405w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1405" height="1600"
              alt="1/2/2025 I" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1416/1600; --arn: 0.8850;">
+    <figure class="work" style="--ar: 1416/1600; --arn: 0.8850;">
+      <div class="work-frame">
         <img src="portfolio/acq-2025-02-01-2.jpg"
              srcset="portfolio/thumbs/acq-2025-02-01-2.jpg 800w, portfolio/acq-2025-02-01-2.jpg 1416w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1416" height="1600"
              alt="1/2/2025 II" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1433/1600; --arn: 0.8956;">
+    <figure class="work" style="--ar: 1433/1600; --arn: 0.8956;">
+      <div class="work-frame">
         <img src="portfolio/acq-2025-02-01-3.jpg"
              srcset="portfolio/thumbs/acq-2025-02-01-3.jpg 800w, portfolio/acq-2025-02-01-3.jpg 1433w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1433" height="1600"
              alt="1/2/2025 III" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1412/1600; --arn: 0.8825;">
+    <figure class="work" style="--ar: 1412/1600; --arn: 0.8825;">
+      <div class="work-frame">
         <img src="portfolio/acq-2025-02-01-4.jpg"
              srcset="portfolio/thumbs/acq-2025-02-01-4.jpg 800w, portfolio/acq-2025-02-01-4.jpg 1412w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1412" height="1600"
              alt="1/2/2025 IV" loading="lazy" decoding="async" />
       </div>
@@ -1360,39 +1354,39 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     <span class="work-tech">Acquerello su cartoncino</span>
   </div>
 
-      <div class="quad verso">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1410/1600; --arn: 0.8812;">
+      <div class="quad verso" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 0.9012));">
+    <figure class="work" style="--ar: 1410/1600; --arn: 0.8812;">
+      <div class="work-frame">
         <img src="portfolio/acq-retro-1.jpg"
              srcset="portfolio/thumbs/acq-retro-1.jpg 800w, portfolio/acq-retro-1.jpg 1410w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1410" height="1600"
              alt="1/2/2025 I, retro manoscritto" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1442/1600; --arn: 0.9012;">
+    <figure class="work" style="--ar: 1442/1600; --arn: 0.9012;">
+      <div class="work-frame">
         <img src="portfolio/acq-retro-2.jpg"
              srcset="portfolio/thumbs/acq-retro-2.jpg 800w, portfolio/acq-retro-2.jpg 1442w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1442" height="1600"
              alt="1/2/2025 II, retro manoscritto" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1403/1600; --arn: 0.8769;">
+    <figure class="work" style="--ar: 1403/1600; --arn: 0.8769;">
+      <div class="work-frame">
         <img src="portfolio/acq-retro-3.jpg"
              srcset="portfolio/thumbs/acq-retro-3.jpg 800w, portfolio/acq-retro-3.jpg 1403w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1403" height="1600"
              alt="1/2/2025 III, retro manoscritto" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1390/1600; --arn: 0.8688;">
+    <figure class="work" style="--ar: 1390/1600; --arn: 0.8688;">
+      <div class="work-frame">
         <img src="portfolio/acq-retro-4.jpg"
              srcset="portfolio/thumbs/acq-retro-4.jpg 800w, portfolio/acq-retro-4.jpg 1390w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1390" height="1600"
              alt="1/2/2025 IV, retro manoscritto" loading="lazy" decoding="async" />
       </div>
@@ -1402,21 +1396,21 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     </div>
 
     <div class="set">
-      <div class="duo">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1364; --arn: 1.1730;">
+      <div class="duo" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.1730));">
+    <figure class="work" style="--ar: 1600/1364; --arn: 1.1730;">
+      <div class="work-frame">
         <img src="portfolio/past-2025-02-21-1.jpg"
              srcset="portfolio/thumbs/past-2025-02-21-1.jpg 800w, portfolio/past-2025-02-21-1.jpg 1600w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1600" height="1364"
              alt="21/2/2025 I" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1369; --arn: 1.1687;">
+    <figure class="work" style="--ar: 1600/1369; --arn: 1.1687;">
+      <div class="work-frame">
         <img src="portfolio/past-2025-02-21-2.jpg"
              srcset="portfolio/thumbs/past-2025-02-21-2.jpg 800w, portfolio/past-2025-02-21-2.jpg 1600w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1600" height="1369"
              alt="21/2/2025 II" loading="lazy" decoding="async" />
       </div>
@@ -1427,21 +1421,21 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     <span class="work-tech">Pastello su cartoncino</span>
   </div>
 
-      <div class="duo verso">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1361; --arn: 1.1756;">
+      <div class="duo verso" style="--h: min(470px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.1791));">
+    <figure class="work" style="--ar: 1600/1361; --arn: 1.1756;">
+      <div class="work-frame">
         <img src="portfolio/past-retro-1.jpg"
              srcset="portfolio/thumbs/past-retro-1.jpg 800w, portfolio/past-retro-1.jpg 1600w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1600" height="1361"
              alt="21/2/2025 I, retro manoscritto" loading="lazy" decoding="async" />
       </div>
     </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1357; --arn: 1.1791;">
+    <figure class="work" style="--ar: 1600/1357; --arn: 1.1791;">
+      <div class="work-frame">
         <img src="portfolio/past-retro-2.jpg"
              srcset="portfolio/thumbs/past-retro-2.jpg 800w, portfolio/past-retro-2.jpg 1600w"
-             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             sizes="(max-width: 560px) 44vw, 540px"
              width="1600" height="1357"
              alt="21/2/2025 II, retro manoscritto" loading="lazy" decoding="async" />
       </div>
@@ -1463,49 +1457,50 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
   <div class="timbri-lead">Opere su carta. Ogni foglio porta impressa, a timbro, la data del giorno in cui &egrave; stato fatto: un diario quotidiano che intreccia vita e arte nel ripetersi del presente.</div>
 
-  <div class="timbri-strip">
-    <figure class="work">
-      <div class="work-frame" style="--ar: 800/586;">
-        <img src="foto_definitive/thumbs/Timbro_2025-02-12.jpg" width="800" height="586"
-             alt="12/2/25" loading="lazy" decoding="async" />
-      </div>
-      <figcaption class="work-caption"><span class="work-date">12/2/25</span></figcaption>
-    </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 596/800;">
-        <img src="foto_definitive/thumbs/Timbro_2025-12-28.jpg" width="596" height="800"
-             alt="28/12/25" loading="lazy" decoding="async" />
-      </div>
-      <figcaption class="work-caption"><span class="work-date">28/12/25</span></figcaption>
-    </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 800/557;">
-        <img src="foto_definitive/thumbs/Timbro_2026-02-07.jpg" width="800" height="557"
-             alt="7/2/26" loading="lazy" decoding="async" />
-      </div>
-      <figcaption class="work-caption"><span class="work-date">7/2/26</span></figcaption>
-    </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 532/800;">
-        <img src="foto_definitive/thumbs/Timbro_2026-03-26.jpg" width="532" height="800"
-             alt="26/3/26" loading="lazy" decoding="async" />
-      </div>
-      <figcaption class="work-caption"><span class="work-date">26/3/26</span></figcaption>
-    </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 800/565;">
-        <img src="foto_definitive/thumbs/Timbro_2026-06-02.jpg" width="800" height="565"
-             alt="2/6/26" loading="lazy" decoding="async" />
-      </div>
-      <figcaption class="work-caption"><span class="work-date">2/6/26</span></figcaption>
-    </figure>
-    <figure class="work">
-      <div class="work-frame" style="--ar: 800/582;">
-        <img src="foto_definitive/thumbs/Timbro_2026-08-11.jpg" width="800" height="582"
-             alt="11/8/26" loading="lazy" decoding="async" />
-      </div>
-      <figcaption class="work-caption"><span class="work-date">11/8/26</span></figcaption>
-    </figure>
+  <div class="timbri-row" style="--h: min(400px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.3932));">
+      <figure class="work" style="--ar: 1800/1319; --arn: 1.3647;">
+        <div class="work-frame">
+          <img src="foto_definitive/Timbro_2025-02-12.jpg"
+               srcset="foto_definitive/thumbs/Timbro_2025-02-12.jpg 800w, foto_definitive/Timbro_2025-02-12.jpg 1800w"
+               sizes="(max-width: 560px) 44vw, 540px"
+               width="1800" height="1319"
+               alt="12/2/25" loading="lazy" decoding="async" />
+        </div>
+        <figcaption class="work-caption"><span class="work-date">12/2/25</span></figcaption>
+      </figure>
+      <figure class="work" style="--ar: 1800/1292; --arn: 1.3932;">
+        <div class="work-frame">
+          <img src="foto_definitive/Timbro_2026-04-09.jpg"
+               srcset="foto_definitive/thumbs/Timbro_2026-04-09.jpg 800w, foto_definitive/Timbro_2026-04-09.jpg 1800w"
+               sizes="(max-width: 560px) 44vw, 540px"
+               width="1800" height="1292"
+               alt="9/4/26" loading="lazy" decoding="async" />
+        </div>
+        <figcaption class="work-caption"><span class="work-date">9/4/26</span></figcaption>
+      </figure>
+  </div>
+
+  <div class="timbri-row" style="--h: min(400px, calc((min(1120px, 94vw) - (var(--gap-pair))) / 2 / 1.3997));">
+      <figure class="work" style="--ar: 1800/1286; --arn: 1.3997;">
+        <div class="work-frame">
+          <img src="foto_definitive/Timbro_2026-07-02.jpg"
+               srcset="foto_definitive/thumbs/Timbro_2026-07-02.jpg 800w, foto_definitive/Timbro_2026-07-02.jpg 1800w"
+               sizes="(max-width: 560px) 44vw, 540px"
+               width="1800" height="1286"
+               alt="2/7/26" loading="lazy" decoding="async" />
+        </div>
+        <figcaption class="work-caption"><span class="work-date">2/7/26</span></figcaption>
+      </figure>
+      <figure class="work" style="--ar: 1800/1313; --arn: 1.3709;">
+        <div class="work-frame">
+          <img src="foto_definitive/Timbro_2026-08-18.jpg"
+               srcset="foto_definitive/thumbs/Timbro_2026-08-18.jpg 800w, foto_definitive/Timbro_2026-08-18.jpg 1800w"
+               sizes="(max-width: 560px) 44vw, 540px"
+               width="1800" height="1313"
+               alt="18/8/26" loading="lazy" decoding="async" />
+        </div>
+        <figcaption class="work-caption"><span class="work-date">18/8/26</span></figcaption>
+      </figure>
   </div>
 
   <div class="timbri-cta">
@@ -1561,7 +1556,6 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
 })();
 </script>
 
