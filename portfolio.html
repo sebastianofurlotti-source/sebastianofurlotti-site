@@ -643,26 +643,53 @@ footer .socials svg{ width: 16px; height: 16px; }
 
 /* push first section down for taller centered header */
 section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
-
+/* ─── HEADER: titolo sopra al centro, nav sotto ─────────────────────── */
+.site-header{ flex-direction: column; gap: 9px; }
+.hdr-row{ display: flex; align-items: center; justify-content: center; gap: 26px; }
+.site-title{ font-size: 15px; letter-spacing: 0.2em; }
+.site-header.is-shrunk .site-title{ font-size: 12.5px; }
+.site-header.is-shrunk .hdr-row{ gap: 20px; }
+nav.menu{ gap: 20px; }
+.is-loaded nav.menu a:nth-child(1){ transition-delay: .62s; }
+.is-loaded nav.menu a:nth-child(3){ transition-delay: .72s; }
+section#timbri{ padding-top: clamp(170px, 19vw, 250px); }
+@media (max-width: 560px){
+  .hdr-row{ gap: 16px; }
+  .site-title{ font-size: 12.5px; letter-spacing: 0.16em; }
+  nav.menu{ gap: 16px; }
+  section#timbri{ padding-top: clamp(126px, 28vw, 170px); }
+}
 
 /* ════════════════════════════════════════════════════════════════════
-   PORTFOLIO — additions. Stessa lingua grafica: Didone display,
-   Garamond body, bianco carta, inchiostro nero.
+   PORTFOLIO
    ════════════════════════════════════════════════════════════════════ */
 
 section.page.portfolio-section{
   padding: clamp(70px, 8vw, 110px) var(--gutter) clamp(40px, 6vw, 80px);
 }
-section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: clamp(30px, 4vw, 50px); }
+section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: clamp(30px, 4vw, 50px); }
 
-/* ritratto */
-.portrait-wrap{
-  width: var(--col);
-  margin: clamp(40px, 6vw, 72px) auto 0;
+/* ─── FRAME: altezza costante → tutte le opere alla stessa scala ───── */
+.portfolio-section .work-frame{
+  height: clamp(300px, 50vh, 500px);
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: var(--ar, 1);
+  margin: 0 auto;
+  background: transparent;
 }
-.portrait-wrap .work-caption{ width: 100%; justify-content: center; }
+.portfolio-section .work-frame::before{ display: none; }
+.portfolio-section .work-frame img{ position: static; width: 100%; height: 100%; object-fit: cover; }
 
-/* didascalia opera: titolo (label FMR) + tecnica */
+.duo .work-frame,
+.quad .work-frame{ height: clamp(210px, 30vh, 340px); }
+.quad.verso .work-frame,
+.duo.verso  .work-frame{ height: clamp(210px, 30vh, 340px); }
+.process-row .work-frame{ height: clamp(84px, 11vw, 132px); }
+.timbri-strip .work-frame{ height: clamp(150px, 19vw, 230px); }
+.portrait-wrap .work-frame{ height: clamp(280px, 44vh, 440px); }
+
+/* ─── didascalie ──────────────────────────────────────────────────── */
 .work-label{
   font-family: var(--didone);
   font-style: italic;
@@ -678,9 +705,8 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   transform: translateY(8px);
   transition: opacity .6s var(--e-out), transform .7s var(--e-out);
 }
-.work.is-in .work-label{ opacity: 1; transform: translateY(0); transition-delay: .55s; }
-.work-label::before{ content:"["; color: var(--mute); font-style: normal; }
-.work-label::after { content:"]"; color: var(--mute); font-style: normal; }
+.work.is-in .work-label,
+.group-caption .work-label{ opacity: 1; transform: translateY(0); transition-delay: .5s; }
 .work-tech{
   display: block;
   margin-top: 10px;
@@ -690,46 +716,34 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   color: var(--mute);
   letter-spacing: 0.04em;
   opacity: 0;
-  transition: opacity .6s var(--e-out) .75s;
+  transition: opacity .6s var(--e-out) .7s;
 }
-.work.is-in .work-tech{ opacity: 1; }
+.work.is-in .work-tech,
+.group-caption .work-tech{ opacity: 1; }
 .work-caption{ flex-direction: column; }
 
-/* coppie di opere */
-.duo{
+.group-caption{
+  width: var(--col-wide);
+  margin: clamp(22px, 3vw, 34px) auto 0;
+  text-align: center;
+}
+
+/* ─── griglie ─────────────────────────────────────────────────────── */
+.duo, .quad{
   width: var(--col-wide);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 56px);
-  align-items: start;
+  gap: clamp(24px, 4vw, 52px);
+  align-items: end;
+  justify-items: center;
 }
-.duo .work{ width: auto; }
+.duo .work, .quad .work{ width: auto; }
+.quad.verso, .duo.verso{ margin-top: clamp(30px, 4vw, 48px); align-items: start; }
 
-/* griglia 2x2 (arazzi, acquerelli) */
-.quad{
-  width: var(--col-wide);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 56px) clamp(24px, 4vw, 56px);
-  align-items: start;
-}
-.quad .work{ width: auto; }
-
-/* fila di retri manoscritti */
-.verso-row{
-  width: var(--col-wide);
-  margin: clamp(28px, 4vw, 48px) auto 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(12px, 2vw, 24px);
-}
-.verso-row.two{ grid-template-columns: repeat(2, 1fr); width: var(--col); }
-.verso-row .work{ width: auto; }
 .verso-note{
   width: var(--col);
-  margin: 18px auto 0;
+  margin: 16px auto 0;
   text-align: center;
   font-family: var(--didone);
   font-style: italic;
@@ -738,19 +752,16 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   letter-spacing: 0.04em;
 }
 
-/* spaziatura fra opere dentro una sezione */
 .pf-gallery{
   display: flex;
   flex-direction: column;
-  gap: clamp(70px, 9vw, 120px);
+  gap: clamp(70px, 9vw, 118px);
   align-items: center;
 }
+.set{ width: 100%; }
 
-/* citazione (Guernica) */
-.quote-wrap{
-  width: var(--col);
-  margin: 0 auto clamp(56px, 8vw, 90px);
-}
+/* ─── citazione ───────────────────────────────────────────────────── */
+.quote-wrap{ width: var(--col); margin: 0 auto clamp(56px, 8vw, 90px); }
 .quote{
   max-width: 60ch;
   margin: 0 auto;
@@ -762,7 +773,7 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   text-align: left;
 }
 .quote::before{
-  content: "“";
+  content: "\201C";
   display: block;
   text-align: center;
   font-family: var(--didone);
@@ -773,7 +784,6 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   color: var(--ink);
 }
 
-/* testo di sezione (arazzi) */
 .section-body{
   max-width: 62ch;
   margin: 0 auto clamp(56px, 8vw, 90px);
@@ -784,13 +794,15 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
 }
 .section-body p + p{ margin-top: 1.2em; text-indent: 1.6em; }
 
-/* processo — filmstrip */
+/* ─── processo ────────────────────────────────────────────────────── */
 .process-row{
   width: var(--col-wide);
-  margin: clamp(40px, 6vw, 64px) auto 0;
+  margin: clamp(44px, 6vw, 70px) auto 0;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: clamp(8px, 1.4vw, 16px);
+  justify-items: center;
+  align-items: center;
 }
 .process-row .work{ width: auto; }
 .process-note{
@@ -804,19 +816,18 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   letter-spacing: 0.04em;
 }
 
-/* timbri — strip finale + rimando */
+/* ─── timbri ──────────────────────────────────────────────────────── */
 .timbri-strip{
   width: var(--col-wide);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 2.6vw, 32px);
+  gap: clamp(26px, 4vw, 50px) clamp(16px, 2.6vw, 32px);
+  justify-items: center;
+  align-items: end;
 }
 .timbri-strip .work{ width: auto; }
-.timbri-cta{
-  text-align: center;
-  margin-top: clamp(40px, 6vw, 64px);
-}
+.timbri-cta{ text-align: center; margin-top: clamp(46px, 6vw, 70px); }
 .timbri-cta a{
   font-family: var(--didone);
   font-style: italic;
@@ -827,13 +838,12 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   border-bottom: 1px solid var(--ink);
   padding: 9px 26px;
   display: inline-block;
-  position: relative;
   transition: letter-spacing .5s var(--e-out);
 }
 .timbri-cta a:hover{ letter-spacing: 0.12em; }
 .timbri-lead{
   max-width: 54ch;
-  margin: 0 auto clamp(48px, 7vw, 80px);
+  margin: 0 auto clamp(48px, 7vw, 78px);
   text-align: center;
   font-family: var(--serif);
   font-size: 18px;
@@ -841,25 +851,24 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   color: var(--ink);
 }
 
-/* responsive */
+/* ─── responsive ──────────────────────────────────────────────────── */
 @media (max-width: 820px){
-  .duo, .quad{ gap: clamp(18px, 3vw, 32px); }
-  .verso-row{ grid-template-columns: repeat(2, 1fr); }
   .process-row{ grid-template-columns: repeat(3, 1fr); }
   .quote{ font-size: 16.5px; }
   .section-body{ font-size: 16px; }
+  .portfolio-section .work-frame{ height: clamp(240px, 40vh, 380px); }
+  .duo .work-frame, .quad .work-frame{ height: clamp(170px, 24vh, 260px); }
 }
 @media (max-width: 560px){
-  .duo, .quad{ grid-template-columns: 1fr; gap: clamp(48px, 10vw, 72px); }
-  .duo .work, .quad .work{ width: var(--col); margin: 0 auto; }
-  .verso-row{ grid-template-columns: repeat(2, 1fr); }
-  .verso-row.two{ grid-template-columns: repeat(2, 1fr); }
-  .process-row{ grid-template-columns: repeat(3, 1fr); }
-  .timbri-strip{ grid-template-columns: 1fr; gap: clamp(40px, 9vw, 60px); }
-  .timbri-strip .work{ width: var(--col); margin: 0 auto; }
+  .duo, .quad{ grid-template-columns: 1fr 1fr; gap: clamp(14px, 3vw, 24px); }
+  .timbri-strip{ grid-template-columns: 1fr 1fr; }
+  .portfolio-section .work-frame{ height: clamp(210px, 34vh, 300px); }
+  .duo .work-frame, .quad .work-frame{ height: clamp(130px, 21vh, 190px); }
+  .timbri-strip .work-frame{ height: clamp(120px, 20vh, 170px); }
+  .process-row .work-frame{ height: clamp(70px, 15vw, 100px); }
   .work-label{ font-size: 12.5px; padding: 5px 12px; }
-  .work-tech{ font-size: 12px; }
-  section#portfolio-top{ padding-top: clamp(140px, 26vw, 180px); }
+  .work-tech{ font-size: 12px; margin-top: 8px; }
+  section#portfolio-top{ padding-top: clamp(130px, 28vw, 175px); }
 }
 </style>
 </head>
@@ -867,24 +876,25 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
 
 <!-- ─── HEADER ───────────────────────────────────────────────────────── -->
 <header class="site-header" id="header">
-  <span class="menu-star menu-star-l" aria-hidden="true">✶</span>
-  <nav class="menu" aria-label="Sezioni">
+  <div class="hdr-row">
+    <span class="menu-star menu-star-l" aria-hidden="true">&#10038;</span>
     <a class="site-title" href="index.html">Sebastiano Furlotti</a>
-    <span class="sep" aria-hidden="true"></span>
+    <span class="menu-star menu-star-r" aria-hidden="true">&#10038;</span>
+  </div>
+  <nav class="menu" aria-label="Sezioni">
     <a href="index.html">Timbri</a>
     <span class="sep" aria-hidden="true"></span>
     <a href="portfolio.html" class="is-active">Portfolio</a>
   </nav>
-  <span class="menu-star menu-star-r" aria-hidden="true">✶</span>
 </header>
 
-<!-- ═══ I · PORTFOLIO / BIO ═══════════════════════════════════════════ -->
+<!-- ═══ PORTFOLIO / BIO ═══════════════════════════════════════════════ -->
 <section class="page portfolio-section" id="portfolio-top">
   <div class="section-head">
     <div class="double-rule" aria-hidden="true"></div>
-    <div class="roman">MMXXI — MMXXVI</div>
+    <div class="roman">2021 &mdash; 2026</div>
     <h2>Portfolio</h2>
-    <div class="sub">Dipinti · Arazzi · Opere su carta</div>
+    <div class="sub">Dipinti &middot; Arazzi &middot; Opere su carta</div>
     <div class="double-rule bottom" aria-hidden="true"></div>
   </div>
 
@@ -895,9 +905,9 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
     </div>
   </div>
 
-  <div class="portrait-wrap">
+  <div class="pf-gallery portrait-wrap">
     <figure class="work">
-      <div class="work-frame" style="--ratio: 60.5%;">
+      <div class="work-frame" style="--ar: 1600/968;">
         <img src="portfolio/ritratto.jpg"
              srcset="portfolio/thumbs/ritratto.jpg 800w, portfolio/ritratto.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -908,47 +918,47 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   </div>
 </section>
 
-<!-- ═══ II · PRIMI DIPINTI ════════════════════════════════════════════ -->
-<section class="page portfolio-section" id="primi-dipinti">
+<!-- ═══ DIPINTI 2021 ══════════════════════════════════════════════════ -->
+<section class="page portfolio-section" id="dipinti-2021">
   <div class="section-head">
     <div class="double-rule" aria-hidden="true"></div>
-    <div class="roman">I &middot; 2021</div>
-    <h2>Primi dipinti</h2>
+    <div class="roman">2021</div>
+    <h2>Dipinti</h2>
     <div class="double-rule bottom" aria-hidden="true"></div>
   </div>
 
   <div class="pf-gallery">
     <div class="duo">
-      <figure class="work">
-        <div class="work-frame" style="--ratio: 135.25%;">
-          <img src="portfolio/troppo-vistoso.jpg"
-               srcset="portfolio/thumbs/troppo-vistoso.jpg 800w, portfolio/troppo-vistoso.jpg 1183w"
-               sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-               width="1183" height="1600"
-               alt="Troppo vistoso, 2021" loading="lazy" decoding="async" />
-        </div>
-        <figcaption class="work-caption">
-          <span class="work-label">Troppo vistoso, 80&times;60, 2021</span>
-          <span class="work-tech">Acrilico su tela con applicazioni &middot; CP</span>
-        </figcaption>
-      </figure>
-      <figure class="work">
-        <div class="work-frame" style="--ratio: 133.11%;">
-          <img src="portfolio/una-citta-viva.jpg"
-               srcset="portfolio/thumbs/una-citta-viva.jpg 800w, portfolio/una-citta-viva.jpg 1202w"
-               sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-               width="1202" height="1600"
-               alt="Una città viva e attiva, 2021" loading="lazy" decoding="async" />
-        </div>
-        <figcaption class="work-caption">
-          <span class="work-label">Una citt&agrave; viva e attiva, 80&times;60, 2021</span>
-          <span class="work-tech">Acrilico su tela con applicazioni &middot; CP</span>
-        </figcaption>
-      </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1183/1600;">
+        <img src="portfolio/troppo-vistoso.jpg"
+             srcset="portfolio/thumbs/troppo-vistoso.jpg 800w, portfolio/troppo-vistoso.jpg 1183w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1183" height="1600"
+             alt="Troppo vistoso, 2021" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption">
+        <span class="work-label">Troppo vistoso, 80&times;60, 2021</span>
+        <span class="work-tech">Acrilico su tela con applicazioni &middot; CP</span>
+      </figcaption>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1202/1600;">
+        <img src="portfolio/una-citta-viva.jpg"
+             srcset="portfolio/thumbs/una-citta-viva.jpg 800w, portfolio/una-citta-viva.jpg 1202w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1202" height="1600"
+             alt="Una città viva e attiva, 2021" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption">
+        <span class="work-label">Una citt&agrave; viva e attiva, 80&times;60, 2021</span>
+        <span class="work-tech">Acrilico su tela con applicazioni &middot; CP</span>
+      </figcaption>
+    </figure>
     </div>
 
     <figure class="work">
-      <div class="work-frame" style="--ratio: 98.88%;">
+      <div class="work-frame" style="--ar: 1600/1582;">
         <img src="portfolio/gli-intrusi.jpg"
              srcset="portfolio/thumbs/gli-intrusi.jpg 800w, portfolio/gli-intrusi.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -963,11 +973,11 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   </div>
 </section>
 
-<!-- ═══ III · GUERNICA ════════════════════════════════════════════════ -->
+<!-- ═══ GUERNICA ══════════════════════════════════════════════════════ -->
 <section class="page portfolio-section" id="guernica">
   <div class="section-head">
     <div class="double-rule" aria-hidden="true"></div>
-    <div class="roman">II &middot; 2021</div>
+    <div class="roman">2021</div>
     <h2>Guernica</h2>
     <div class="double-rule bottom" aria-hidden="true"></div>
   </div>
@@ -978,20 +988,19 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
 
   <div class="pf-gallery">
     <figure class="work">
-      <div class="work-frame" style="--ratio: 66.12%;">
+      <div class="work-frame" style="--ar: 1600/1058;">
         <img src="portfolio/guernica-parma.jpg"
              srcset="portfolio/thumbs/guernica-parma.jpg 800w, portfolio/guernica-parma.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
              width="1600" height="1058"
-             alt="Guernica esposta sulla facciata del Palazzo della Provincia di Parma" loading="lazy" decoding="async" />
+             alt="Guernica sulla facciata del Palazzo della Provincia di Parma" loading="lazy" decoding="async" />
       </div>
       <figcaption class="work-caption">
         <span class="work-label">Palazzo della Provincia, Parma</span>
       </figcaption>
     </figure>
-
     <figure class="work">
-      <div class="work-frame" style="--ratio: 75%;">
+      <div class="work-frame" style="--ar: 1600/1200;">
         <img src="portfolio/guernica-interno.jpg"
              srcset="portfolio/thumbs/guernica-interno.jpg 800w, portfolio/guernica-interno.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1003,59 +1012,56 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
         <span class="work-tech">Patchwork</span>
       </figcaption>
     </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1600/1067;">
+        <img src="portfolio/campana-drone.jpg"
+             srcset="portfolio/thumbs/campana-drone.jpg 800w, portfolio/campana-drone.jpg 1600w"
+             sizes="(max-width: 720px) 92vw, 720px"
+             width="1600" height="1067"
+             alt="Guernica vista dall’alto" loading="lazy" decoding="async" />
+      </div>
+    </figure>
   </div>
 </section>
 
-<!-- ═══ IV · PER CHI SUONA LA CAMPANA ═════════════════════════════════ -->
+<!-- ═══ PER CHI SUONA LA CAMPANA ══════════════════════════════════════ -->
 <section class="page portfolio-section" id="campana">
   <div class="section-head">
     <div class="double-rule" aria-hidden="true"></div>
-    <div class="roman">III &middot; 2022</div>
+    <div class="roman">2022</div>
     <h2>Per chi suona la campana</h2>
     <div class="double-rule bottom" aria-hidden="true"></div>
   </div>
 
   <div class="pf-gallery">
     <figure class="work">
-      <div class="work-frame" style="--ratio: 66.69%;">
-        <img src="portfolio/campana-drone.jpg"
-             srcset="portfolio/thumbs/campana-drone.jpg 800w, portfolio/campana-drone.jpg 1600w"
-             sizes="(max-width: 720px) 92vw, 720px"
-             width="1600" height="1067"
-             alt="Per chi suona la campana vista dall'alto" loading="lazy" decoding="async" />
-      </div>
-      <figcaption class="work-caption">
-        <span class="work-label">Patchwork, 7,5 metri &times; 5, 2022</span>
-      </figcaption>
-    </figure>
-
-    <figure class="work">
-      <div class="work-frame" style="--ratio: 123.93%;">
+      <div class="work-frame" style="--ar: 1291/1600;">
         <img src="portfolio/campana-dettaglio.jpg"
              srcset="portfolio/thumbs/campana-dettaglio.jpg 800w, portfolio/campana-dettaglio.jpg 1291w"
              sizes="(max-width: 720px) 92vw, 720px"
              width="1291" height="1600"
-             alt="Per chi suona la campana, dettaglio" loading="lazy" decoding="async" />
+             alt="Per chi suona la campana, 2022" loading="lazy" decoding="async" />
       </div>
       <figcaption class="work-caption">
-        <span class="work-label">Dettaglio</span>
+        <span class="work-label">Per chi suona la campana, 7,5 metri &times; 5, 2022</span>
+        <span class="work-tech">Patchwork</span>
       </figcaption>
     </figure>
   </div>
 </section>
 
-<!-- ═══ V · DIPINTI 2022–2023 ═════════════════════════════════════════ -->
+<!-- ═══ DIPINTI 2022–2023 ═════════════════════════════════════════════ -->
 <section class="page portfolio-section" id="dipinti">
   <div class="section-head">
     <div class="double-rule" aria-hidden="true"></div>
-    <div class="roman">IV &middot; 2022 &ndash; 2023</div>
+    <div class="roman">2022 &ndash; 2023</div>
     <h2>Dipinti</h2>
     <div class="double-rule bottom" aria-hidden="true"></div>
   </div>
 
   <div class="pf-gallery">
     <figure class="work">
-      <div class="work-frame" style="--ratio: 98.44%;">
+      <div class="work-frame" style="--ar: 1600/1575;">
         <img src="portfolio/balconata.jpg"
              srcset="portfolio/thumbs/balconata.jpg 800w, portfolio/balconata.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1069,65 +1075,65 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
     </figure>
 
     <div class="duo">
-      <figure class="work">
-        <div class="work-frame" style="--ratio: 100%;">
-          <img src="portfolio/senza-titolo-2023.jpg"
-               srcset="portfolio/thumbs/senza-titolo-2023.jpg 800w, portfolio/senza-titolo-2023.jpg 1080w"
-               sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-               width="1080" height="1080"
-               alt="Senza titolo, 2023" loading="lazy" decoding="async" />
-        </div>
-        <figcaption class="work-caption">
-          <span class="work-label">Senza titolo, 30&times;40, 2023</span>
-          <span class="work-tech">Acrilico su cartoncino &middot; CP</span>
-        </figcaption>
-      </figure>
-      <figure class="work">
-        <div class="work-frame" style="--ratio: 100.57%;">
-          <img src="portfolio/montagna-bianca.jpg"
-               srcset="portfolio/thumbs/montagna-bianca.jpg 800w, portfolio/montagna-bianca.jpg 1591w"
-               sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-               width="1591" height="1600"
-               alt="La montagna bianca, 2023" loading="lazy" decoding="async" />
-        </div>
-        <figcaption class="work-caption">
-          <span class="work-label">La montagna bianca, 40&times;40, 2023</span>
-          <span class="work-tech">Olio su tela &middot; CP</span>
-        </figcaption>
-      </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1080/1080;">
+        <img src="portfolio/senza-titolo-2023.jpg"
+             srcset="portfolio/thumbs/senza-titolo-2023.jpg 800w, portfolio/senza-titolo-2023.jpg 1080w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1080" height="1080"
+             alt="Senza titolo, 2023" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption">
+        <span class="work-label">Senza titolo, 30&times;40, 2023</span>
+        <span class="work-tech">Acrilico su cartoncino &middot; CP</span>
+      </figcaption>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1591/1600;">
+        <img src="portfolio/montagna-bianca.jpg"
+             srcset="portfolio/thumbs/montagna-bianca.jpg 800w, portfolio/montagna-bianca.jpg 1591w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1591" height="1600"
+             alt="La montagna bianca, 2023" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption">
+        <span class="work-label">La montagna bianca, 40&times;40, 2023</span>
+        <span class="work-tech">Olio su tela &middot; CP</span>
+      </figcaption>
+    </figure>
     </div>
 
     <div class="duo">
-      <figure class="work">
-        <div class="work-frame" style="--ratio: 124.42%;">
-          <img src="portfolio/ditirambo.jpg"
-               srcset="portfolio/thumbs/ditirambo.jpg 800w, portfolio/ditirambo.jpg 1286w"
-               sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-               width="1286" height="1600"
-               alt="Ditirambo, 2023" loading="lazy" decoding="async" />
-        </div>
-        <figcaption class="work-caption">
-          <span class="work-label">Ditirambo, 90&times;70, 2023</span>
-          <span class="work-tech">Olio su tela &middot; CP</span>
-        </figcaption>
-      </figure>
-      <figure class="work">
-        <div class="work-frame" style="--ratio: 101.27%;">
-          <img src="portfolio/tre-carte-blu.jpg"
-               srcset="portfolio/thumbs/tre-carte-blu.jpg 800w, portfolio/tre-carte-blu.jpg 1580w"
-               sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-               width="1580" height="1600"
-               alt="Tre carte blu, 2023" loading="lazy" decoding="async" />
-        </div>
-        <figcaption class="work-caption">
-          <span class="work-label">Tre carte blu, 90&times;90, 2023</span>
-          <span class="work-tech">Olio su tela</span>
-        </figcaption>
-      </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1286/1600;">
+        <img src="portfolio/ditirambo.jpg"
+             srcset="portfolio/thumbs/ditirambo.jpg 800w, portfolio/ditirambo.jpg 1286w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1286" height="1600"
+             alt="Ditirambo, 2023" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption">
+        <span class="work-label">Ditirambo, 90&times;70, 2023</span>
+        <span class="work-tech">Olio su tela &middot; CP</span>
+      </figcaption>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1580/1600;">
+        <img src="portfolio/tre-carte-blu.jpg"
+             srcset="portfolio/thumbs/tre-carte-blu.jpg 800w, portfolio/tre-carte-blu.jpg 1580w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1580" height="1600"
+             alt="Tre carte blu, 2023" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption">
+        <span class="work-label">Tre carte blu, 90&times;90, 2023</span>
+        <span class="work-tech">Olio su tela</span>
+      </figcaption>
+    </figure>
     </div>
 
     <figure class="work">
-      <div class="work-frame" style="--ratio: 84.94%;">
+      <div class="work-frame" style="--ar: 1600/1359;">
         <img src="portfolio/colori-coloniali.jpg"
              srcset="portfolio/thumbs/colori-coloniali.jpg 800w, portfolio/colori-coloniali.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1141,7 +1147,7 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
     </figure>
 
     <figure class="work">
-      <div class="work-frame" style="--ratio: 66.12%;">
+      <div class="work-frame" style="--ar: 1600/1058;">
         <img src="portfolio/strade-affollate.jpg"
              srcset="portfolio/thumbs/strade-affollate.jpg 800w, portfolio/strade-affollate.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1156,11 +1162,11 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
   </div>
 </section>
 
-<!-- ═══ VI · ARAZZI ═══════════════════════════════════════════════════ -->
+<!-- ═══ ARAZZI ════════════════════════════════════════════════════════ -->
 <section class="page portfolio-section" id="arazzi">
   <div class="section-head">
     <div class="double-rule" aria-hidden="true"></div>
-    <div class="roman">V &middot; 2024</div>
+    <div class="roman">2024</div>
     <h2>Arazzi</h2>
     <div class="double-rule bottom" aria-hidden="true"></div>
   </div>
@@ -1173,7 +1179,7 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
 
   <div class="quad">
     <figure class="work">
-      <div class="work-frame" style="--ratio: 135.94%;">
+      <div class="work-frame" style="--ar: 1177/1600;">
         <img src="portfolio/arazzo-1.jpg"
              srcset="portfolio/thumbs/arazzo-1.jpg 800w, portfolio/arazzo-1.jpg 1177w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1182,7 +1188,7 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 141.22%;">
+      <div class="work-frame" style="--ar: 1133/1600;">
         <img src="portfolio/arazzo-2.jpg"
              srcset="portfolio/thumbs/arazzo-2.jpg 800w, portfolio/arazzo-2.jpg 1133w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1191,7 +1197,7 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 118.52%;">
+      <div class="work-frame" style="--ar: 1350/1600;">
         <img src="portfolio/arazzo-3.jpg"
              srcset="portfolio/thumbs/arazzo-3.jpg 800w, portfolio/arazzo-3.jpg 1350w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1200,67 +1206,79 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 124.03%;">
+      <div class="work-frame" style="--ar: 1290/1600;">
         <img src="portfolio/arazzo-4.jpg"
              srcset="portfolio/thumbs/arazzo-4.jpg 800w, portfolio/arazzo-4.jpg 1290w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
              width="1290" height="1600"
              alt="Arazzo, 2024" loading="lazy" decoding="async" />
       </div>
-      <figcaption class="work-caption">
-        <span class="work-label">Arazzi, 2024 &mdash; serie di venti, dimensioni variabili, ca. 100&times;100</span>
-        <span class="work-tech">Lana vergine cucita a mano</span>
-      </figcaption>
     </figure>
+  </div>
+  <div class="group-caption">
+    <span class="work-label">Arazzi, 2024 &mdash; serie di venti, dimensioni variabili, ca. 100&times;100</span>
+    <span class="work-tech">Lana vergine cucita a mano</span>
   </div>
 
   <div class="process-row">
     <figure class="work">
-      <div class="work-frame" style="--ratio: 133.33%;">
-        <img src="portfolio/thumbs/processo-1.jpg" width="600" height="800" alt="Il telaio" loading="lazy" decoding="async" />
+      <div class="work-frame" style="--ar: 1200/1600;">
+        <img src="portfolio/thumbs/processo-1.jpg"
+             width="1200" height="1600"
+             alt="Il telaio" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 133.33%;">
-        <img src="portfolio/thumbs/processo-2.jpg" width="600" height="800" alt="La tessitura" loading="lazy" decoding="async" />
+      <div class="work-frame" style="--ar: 1200/1600;">
+        <img src="portfolio/thumbs/processo-2.jpg"
+             width="1200" height="1600"
+             alt="La tessitura" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 133.33%;">
-        <img src="portfolio/thumbs/processo-3.jpg" width="800" height="600" alt="Le lane" loading="lazy" decoding="async" />
+      <div class="work-frame" style="--ar: 1600/1200;">
+        <img src="portfolio/thumbs/processo-3.jpg"
+             width="1600" height="1200"
+             alt="Le lane" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 133.33%;">
-        <img src="portfolio/thumbs/processo-4.jpg" width="600" height="800" alt="Kairouan" loading="lazy" decoding="async" />
+      <div class="work-frame" style="--ar: 1200/1600;">
+        <img src="portfolio/thumbs/processo-4.jpg"
+             width="1200" height="1600"
+             alt="Kairouan" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 133.33%;">
-        <img src="portfolio/thumbs/processo-5.jpg" width="600" height="800" alt="Le campionature dei colori" loading="lazy" decoding="async" />
+      <div class="work-frame" style="--ar: 1200/1600;">
+        <img src="portfolio/thumbs/processo-5.jpg"
+             width="1200" height="1600"
+             alt="Le campionature dei colori" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 133.33%;">
-        <img src="portfolio/thumbs/processo-6.jpg" width="600" height="800" alt="Le campionature dei colori" loading="lazy" decoding="async" />
+      <div class="work-frame" style="--ar: 1200/1600;">
+        <img src="portfolio/thumbs/processo-6.jpg"
+             width="1200" height="1600"
+             alt="Le campionature dei colori" loading="lazy" decoding="async" />
       </div>
     </figure>
   </div>
   <div class="process-note">Kairouan, Tunisia &mdash; il telaio, le lane, le campionature dei colori</div>
 </section>
 
-<!-- ═══ VII · OPERE SU CARTA ══════════════════════════════════════════ -->
-<section class="page portfolio-section" id="opere-su-carta">
+<!-- ═══ DATE ══════════════════════════════════════════════════════════ -->
+<section class="page portfolio-section" id="date">
   <div class="section-head">
     <div class="double-rule" aria-hidden="true"></div>
-    <div class="roman">VI &middot; 2024 &ndash; 2025</div>
-    <h2>Il ripetersi del presente</h2>
+    <div class="roman">2024 &ndash; 2025</div>
+    <h2>Date</h2>
     <div class="double-rule bottom" aria-hidden="true"></div>
   </div>
 
   <div class="pf-gallery">
     <figure class="work">
-      <div class="work-frame" style="--ratio: 133.33%;">
+      <div class="work-frame" style="--ar: 1200/1600;">
         <img src="portfolio/olio-2024-12-23.jpg"
              srcset="portfolio/thumbs/olio-2024-12-23.jpg 800w, portfolio/olio-2024-12-23.jpg 1200w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1274,7 +1292,7 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
     </figure>
 
     <figure class="work">
-      <div class="work-frame" style="--ratio: 80.81%;">
+      <div class="work-frame" style="--ar: 1600/1293;">
         <img src="portfolio/pastello-2025-02-01.jpg"
              srcset="portfolio/thumbs/pastello-2025-02-01.jpg 800w, portfolio/pastello-2025-02-01.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1287,120 +1305,147 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
       </figcaption>
     </figure>
 
-    <div>
+    <div class="set">
       <div class="quad">
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 113.88%;">
-            <img src="portfolio/acq-2025-02-01-1.jpg"
-                 srcset="portfolio/thumbs/acq-2025-02-01-1.jpg 800w, portfolio/acq-2025-02-01-1.jpg 1405w"
-                 sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-                 width="1405" height="1600"
-                 alt="1/2/2025 I" loading="lazy" decoding="async" />
-          </div>
-        </figure>
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 112.99%;">
-            <img src="portfolio/acq-2025-02-01-2.jpg"
-                 srcset="portfolio/thumbs/acq-2025-02-01-2.jpg 800w, portfolio/acq-2025-02-01-2.jpg 1416w"
-                 sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-                 width="1416" height="1600"
-                 alt="1/2/2025 II" loading="lazy" decoding="async" />
-          </div>
-        </figure>
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 111.65%;">
-            <img src="portfolio/acq-2025-02-01-3.jpg"
-                 srcset="portfolio/thumbs/acq-2025-02-01-3.jpg 800w, portfolio/acq-2025-02-01-3.jpg 1433w"
-                 sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-                 width="1433" height="1600"
-                 alt="1/2/2025 III" loading="lazy" decoding="async" />
-          </div>
-        </figure>
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 113.31%;">
-            <img src="portfolio/acq-2025-02-01-4.jpg"
-                 srcset="portfolio/thumbs/acq-2025-02-01-4.jpg 800w, portfolio/acq-2025-02-01-4.jpg 1412w"
-                 sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-                 width="1412" height="1600"
-                 alt="1/2/2025 IV" loading="lazy" decoding="async" />
-          </div>
-          <figcaption class="work-caption">
-            <span class="work-label">1/2/2025 I&ndash;II&ndash;III&ndash;IV, 24&times;27 ciascuno, 2025</span>
-            <span class="work-tech">Acquerello su cartoncino</span>
-          </figcaption>
-        </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1405/1600;">
+        <img src="portfolio/acq-2025-02-01-1.jpg"
+             srcset="portfolio/thumbs/acq-2025-02-01-1.jpg 800w, portfolio/acq-2025-02-01-1.jpg 1405w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1405" height="1600"
+             alt="1/2/2025 I" loading="lazy" decoding="async" />
       </div>
-      <div class="verso-row">
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 113.48%;">
-            <img src="portfolio/thumbs/acq-retro-1.jpg" width="705" height="800" alt="1/2/2025 I, retro manoscritto" loading="lazy" decoding="async" />
-          </div>
-        </figure>
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 110.96%;">
-            <img src="portfolio/thumbs/acq-retro-2.jpg" width="721" height="800" alt="1/2/2025 II, retro manoscritto" loading="lazy" decoding="async" />
-          </div>
-        </figure>
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 114.04%;">
-            <img src="portfolio/thumbs/acq-retro-3.jpg" width="701" height="800" alt="1/2/2025 III, retro manoscritto" loading="lazy" decoding="async" />
-          </div>
-        </figure>
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 115.11%;">
-            <img src="portfolio/thumbs/acq-retro-4.jpg" width="695" height="800" alt="1/2/2025 IV, retro manoscritto" loading="lazy" decoding="async" />
-          </div>
-        </figure>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1416/1600;">
+        <img src="portfolio/acq-2025-02-01-2.jpg"
+             srcset="portfolio/thumbs/acq-2025-02-01-2.jpg 800w, portfolio/acq-2025-02-01-2.jpg 1416w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1416" height="1600"
+             alt="1/2/2025 II" loading="lazy" decoding="async" />
+      </div>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1433/1600;">
+        <img src="portfolio/acq-2025-02-01-3.jpg"
+             srcset="portfolio/thumbs/acq-2025-02-01-3.jpg 800w, portfolio/acq-2025-02-01-3.jpg 1433w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1433" height="1600"
+             alt="1/2/2025 III" loading="lazy" decoding="async" />
+      </div>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1412/1600;">
+        <img src="portfolio/acq-2025-02-01-4.jpg"
+             srcset="portfolio/thumbs/acq-2025-02-01-4.jpg 800w, portfolio/acq-2025-02-01-4.jpg 1412w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1412" height="1600"
+             alt="1/2/2025 IV" loading="lazy" decoding="async" />
+      </div>
+    </figure>
+      </div>
+  <div class="group-caption">
+    <span class="work-label">1/2/2025 I&ndash;II&ndash;III&ndash;IV, 24&times;27 ciascuno, 2025</span>
+    <span class="work-tech">Acquerello su cartoncino</span>
+  </div>
+
+      <div class="quad verso">
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1410/1600;">
+        <img src="portfolio/acq-retro-1.jpg"
+             srcset="portfolio/thumbs/acq-retro-1.jpg 800w, portfolio/acq-retro-1.jpg 1410w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1410" height="1600"
+             alt="1/2/2025 I, retro manoscritto" loading="lazy" decoding="async" />
+      </div>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1442/1600;">
+        <img src="portfolio/acq-retro-2.jpg"
+             srcset="portfolio/thumbs/acq-retro-2.jpg 800w, portfolio/acq-retro-2.jpg 1442w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1442" height="1600"
+             alt="1/2/2025 II, retro manoscritto" loading="lazy" decoding="async" />
+      </div>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1403/1600;">
+        <img src="portfolio/acq-retro-3.jpg"
+             srcset="portfolio/thumbs/acq-retro-3.jpg 800w, portfolio/acq-retro-3.jpg 1403w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1403" height="1600"
+             alt="1/2/2025 III, retro manoscritto" loading="lazy" decoding="async" />
+      </div>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1390/1600;">
+        <img src="portfolio/acq-retro-4.jpg"
+             srcset="portfolio/thumbs/acq-retro-4.jpg 800w, portfolio/acq-retro-4.jpg 1390w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1390" height="1600"
+             alt="1/2/2025 IV, retro manoscritto" loading="lazy" decoding="async" />
+      </div>
+    </figure>
       </div>
       <div class="verso-note">Sul retro di ogni foglio, il diario manoscritto del giorno</div>
     </div>
 
-    <div>
+    <div class="set">
       <div class="duo">
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 85.25%;">
-            <img src="portfolio/past-2025-02-21-1.jpg"
-                 srcset="portfolio/thumbs/past-2025-02-21-1.jpg 800w, portfolio/past-2025-02-21-1.jpg 1600w"
-                 sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-                 width="1600" height="1364"
-                 alt="21/2/2025 I" loading="lazy" decoding="async" />
-          </div>
-        </figure>
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 85.56%;">
-            <img src="portfolio/past-2025-02-21-2.jpg"
-                 srcset="portfolio/thumbs/past-2025-02-21-2.jpg 800w, portfolio/past-2025-02-21-2.jpg 1600w"
-                 sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-                 width="1600" height="1369"
-                 alt="21/2/2025 II" loading="lazy" decoding="async" />
-          </div>
-          <figcaption class="work-caption">
-            <span class="work-label">21/2/2025 I&ndash;II, 2025</span>
-            <span class="work-tech">Pastello su cartoncino</span>
-          </figcaption>
-        </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1600/1364;">
+        <img src="portfolio/past-2025-02-21-1.jpg"
+             srcset="portfolio/thumbs/past-2025-02-21-1.jpg 800w, portfolio/past-2025-02-21-1.jpg 1600w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1600" height="1364"
+             alt="21/2/2025 I" loading="lazy" decoding="async" />
       </div>
-      <div class="verso-row two">
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 85.06%;">
-            <img src="portfolio/thumbs/past-retro-1.jpg" width="800" height="680" alt="21/2/2025 I, retro manoscritto" loading="lazy" decoding="async" />
-          </div>
-        </figure>
-        <figure class="work">
-          <div class="work-frame" style="--ratio: 84.81%;">
-            <img src="portfolio/thumbs/past-retro-2.jpg" width="800" height="678" alt="21/2/2025 II, retro manoscritto" loading="lazy" decoding="async" />
-          </div>
-        </figure>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1600/1369;">
+        <img src="portfolio/past-2025-02-21-2.jpg"
+             srcset="portfolio/thumbs/past-2025-02-21-2.jpg 800w, portfolio/past-2025-02-21-2.jpg 1600w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1600" height="1369"
+             alt="21/2/2025 II" loading="lazy" decoding="async" />
       </div>
+    </figure>
+      </div>
+  <div class="group-caption">
+    <span class="work-label">21/2/2025 I&ndash;II, 2025</span>
+    <span class="work-tech">Pastello su cartoncino</span>
+  </div>
+
+      <div class="duo verso">
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1600/1361;">
+        <img src="portfolio/past-retro-1.jpg"
+             srcset="portfolio/thumbs/past-retro-1.jpg 800w, portfolio/past-retro-1.jpg 1600w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1600" height="1361"
+             alt="21/2/2025 I, retro manoscritto" loading="lazy" decoding="async" />
+      </div>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 1600/1357;">
+        <img src="portfolio/past-retro-2.jpg"
+             srcset="portfolio/thumbs/past-retro-2.jpg 800w, portfolio/past-retro-2.jpg 1600w"
+             sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
+             width="1600" height="1357"
+             alt="21/2/2025 II, retro manoscritto" loading="lazy" decoding="async" />
+      </div>
+    </figure>
+      </div>
+      <div class="verso-note">Sul retro di ogni foglio, il diario manoscritto del giorno</div>
     </div>
   </div>
 </section>
 
-<!-- ═══ VIII · TIMBRI ═════════════════════════════════════════════════ -->
+<!-- ═══ TIMBRI ════════════════════════════════════════════════════════ -->
 <section class="page portfolio-section" id="timbri-portfolio">
   <div class="section-head">
     <div class="double-rule" aria-hidden="true"></div>
-    <div class="roman">VII &middot; 2025 &mdash; in corso</div>
+    <div class="roman">2025 &mdash; in corso</div>
     <h2>Timbri</h2>
     <div class="double-rule bottom" aria-hidden="true"></div>
   </div>
@@ -1409,22 +1454,46 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
 
   <div class="timbri-strip">
     <figure class="work">
-      <div class="work-frame" style="--ratio: 138.65%;">
-        <img src="foto_definitive/thumbs/Timbro_2025-11-15.jpg" width="577" height="800" alt="15/11/25" loading="lazy" decoding="async" />
+      <div class="work-frame" style="--ar: 800/586;">
+        <img src="foto_definitive/thumbs/Timbro_2025-02-12.jpg" width="800" height="586"
+             alt="12/2/25" loading="lazy" decoding="async" />
       </div>
-      <figcaption class="work-caption"><span class="work-date">15/11/25</span></figcaption>
+      <figcaption class="work-caption"><span class="work-date">12/2/25</span></figcaption>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 137.93%;">
-        <img src="foto_definitive/thumbs/Timbro_2025-11-24.jpg" width="580" height="800" alt="24/11/25" loading="lazy" decoding="async" />
+      <div class="work-frame" style="--ar: 596/800;">
+        <img src="foto_definitive/thumbs/Timbro_2025-12-28.jpg" width="596" height="800"
+             alt="28/12/25" loading="lazy" decoding="async" />
       </div>
-      <figcaption class="work-caption"><span class="work-date">24/11/25</span></figcaption>
+      <figcaption class="work-caption"><span class="work-date">28/12/25</span></figcaption>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ratio: 138.89%;">
-        <img src="foto_definitive/thumbs/Timbro_2025-12-11.jpg" width="576" height="800" alt="11/12/25" loading="lazy" decoding="async" />
+      <div class="work-frame" style="--ar: 800/557;">
+        <img src="foto_definitive/thumbs/Timbro_2026-02-07.jpg" width="800" height="557"
+             alt="7/2/26" loading="lazy" decoding="async" />
       </div>
-      <figcaption class="work-caption"><span class="work-date">11/12/25</span></figcaption>
+      <figcaption class="work-caption"><span class="work-date">7/2/26</span></figcaption>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 532/800;">
+        <img src="foto_definitive/thumbs/Timbro_2026-03-26.jpg" width="532" height="800"
+             alt="26/3/26" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption"><span class="work-date">26/3/26</span></figcaption>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 800/565;">
+        <img src="foto_definitive/thumbs/Timbro_2026-06-02.jpg" width="800" height="565"
+             alt="2/6/26" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption"><span class="work-date">2/6/26</span></figcaption>
+    </figure>
+    <figure class="work">
+      <div class="work-frame" style="--ar: 800/582;">
+        <img src="foto_definitive/thumbs/Timbro_2026-08-11.jpg" width="800" height="582"
+             alt="11/8/26" loading="lazy" decoding="async" />
+      </div>
+      <figcaption class="work-caption"><span class="work-date">11/8/26</span></figcaption>
     </figure>
   </div>
 
@@ -1460,16 +1529,11 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
 <script>
 (function(){
   'use strict';
-
   const works = document.querySelectorAll('.work');
-
   if('IntersectionObserver' in window){
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if(e.isIntersecting){
-          e.target.classList.add('is-in');
-          io.unobserve(e.target);
-        }
+        if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     works.forEach(w => io.observe(w));
@@ -1481,39 +1545,27 @@ section#portfolio-top{ padding-top: clamp(160px, 18vw, 240px); padding-bottom: c
 
   const header = document.getElementById('header');
   function onScroll(){
-    const y = window.scrollY;
-    if(y > 40) header.classList.add('is-shrunk');
+    if(window.scrollY > 40) header.classList.add('is-shrunk');
     else header.classList.remove('is-shrunk');
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* Double-rule: si disegnano dal lato verso cui sta il cursore quando entrano in viewport */
   const rules = document.querySelectorAll('.section-head .double-rule');
   if(rules.length){
     let cursorX = window.innerWidth / 2;
     window.addEventListener('pointermove', (e) => { cursorX = e.clientX; }, { passive: true });
-
     const drawRule = (rule) => {
       const r = rule.getBoundingClientRect();
-      const fromLeft = cursorX < r.left + r.width / 2;
-      rule.style.setProperty('--rule-origin', fromLeft ? '0%' : '100%');
+      rule.style.setProperty('--rule-origin', cursorX < r.left + r.width / 2 ? '0%' : '100%');
       rule.classList.add('is-drawn');
     };
-
     if('IntersectionObserver' in window){
       const ruleIO = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if(e.isIntersecting){
-            drawRule(e.target);
-            ruleIO.unobserve(e.target);
-          }
-        });
+        entries.forEach(e => { if(e.isIntersecting){ drawRule(e.target); ruleIO.unobserve(e.target); } });
       }, { threshold: 0.4, rootMargin: '0px 0px -10% 0px' });
       rules.forEach(r => ruleIO.observe(r));
-    } else {
-      rules.forEach(drawRule);
-    }
+    } else { rules.forEach(drawRule); }
   }
 })();
 </script>

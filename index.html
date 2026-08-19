@@ -642,21 +642,38 @@ footer .socials svg{ width: 16px; height: 16px; }
 
 /* push first section down for taller centered header */
 section#timbri{ padding-top: clamp(160px, 18vw, 240px); }
+/* ─── HEADER: titolo sopra al centro, nav sotto ─────────────────────── */
+.site-header{ flex-direction: column; gap: 9px; }
+.hdr-row{ display: flex; align-items: center; justify-content: center; gap: 26px; }
+.site-title{ font-size: 15px; letter-spacing: 0.2em; }
+.site-header.is-shrunk .site-title{ font-size: 12.5px; }
+.site-header.is-shrunk .hdr-row{ gap: 20px; }
+nav.menu{ gap: 20px; }
+.is-loaded nav.menu a:nth-child(1){ transition-delay: .62s; }
+.is-loaded nav.menu a:nth-child(3){ transition-delay: .72s; }
+section#timbri{ padding-top: clamp(170px, 19vw, 250px); }
+@media (max-width: 560px){
+  .hdr-row{ gap: 16px; }
+  .site-title{ font-size: 12.5px; letter-spacing: 0.16em; }
+  nav.menu{ gap: 16px; }
+  section#timbri{ padding-top: clamp(126px, 28vw, 170px); }
+}
 </style>
 </head>
 <body>
 
 <!-- ─── HEADER ───────────────────────────────────────────────────────── -->
 <header class="site-header" id="header">
-  <span class="menu-star menu-star-l" aria-hidden="true">✶</span>
-  <nav class="menu" aria-label="Sezioni">
+  <div class="hdr-row">
+    <span class="menu-star menu-star-l" aria-hidden="true">&#10038;</span>
     <span class="site-title">Sebastiano Furlotti</span>
-    <span class="sep" aria-hidden="true"></span>
-    <a href="#timbri" class="is-active">Timbri</a>
+    <span class="menu-star menu-star-r" aria-hidden="true">&#10038;</span>
+  </div>
+  <nav class="menu" aria-label="Sezioni">
+    <a href="index.html" class="is-active">Timbri</a>
     <span class="sep" aria-hidden="true"></span>
     <a href="portfolio.html">Portfolio</a>
   </nav>
-  <span class="menu-star menu-star-r" aria-hidden="true">✶</span>
 </header>
 
 <!-- ═══════════════════════════════════════════════════════════════════
