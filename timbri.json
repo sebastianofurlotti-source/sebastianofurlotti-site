@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-08-19",
-  "count": 162,
+  "count": 161,
   "items": [
     {
       "id": "IMG_9768",
@@ -2255,20 +2255,6 @@
       "height": 1800,
       "ratio_pct": 138.67,
       "filename": "Timbro_2025-11-15.jpg"
-    },
-    {
-      "id": "IMG_8185",
-      "date_iso": "2025-02-12",
-      "date_display": "12/2/25",
-      "raw_stamp": "12/2/2025",
-      "file_web": "foto_definitive/Timbro_2025-02-12.jpg",
-      "file_thumb": "foto_definitive/thumbs/Timbro_2025-02-12.jpg",
-      "confidence": "high",
-      "notes": "",
-      "width": 1800,
-      "height": 1319,
-      "ratio_pct": 73.28,
-      "filename": "Timbro_2025-02-12.jpg"
     }
   ]
 }
