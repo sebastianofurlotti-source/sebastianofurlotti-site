@@ -671,23 +671,38 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
 /* ─── FRAME: altezza costante → tutte le opere alla stessa scala ───── */
 .portfolio-section .work-frame{
-  height: clamp(300px, 50vh, 500px);
-  width: auto;
-  max-width: 100%;
+  --h: clamp(300px, 50vh, 500px);
+  width: min(100%, calc(var(--h) * var(--arn, 1)));
+  height: auto;
   aspect-ratio: var(--ar, 1);
   margin: 0 auto;
   background: transparent;
 }
 .portfolio-section .work-frame::before{ display: none; }
-.portfolio-section .work-frame img{ position: static; width: 100%; height: 100%; object-fit: cover; }
+/* contain: l'immagine non viene MAI ritagliata */
+.portfolio-section .work-frame img{
+  position: static;
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+.portfolio-section .work-frame:hover img{ transform: none; filter: none; }
 
 .duo .work-frame,
-.quad .work-frame{ height: clamp(210px, 30vh, 340px); }
-.quad.verso .work-frame,
-.duo.verso  .work-frame{ height: clamp(210px, 30vh, 340px); }
-.process-row .work-frame{ height: clamp(84px, 11vw, 132px); }
-.timbri-strip .work-frame{ height: clamp(150px, 19vw, 230px); }
-.portrait-wrap .work-frame{ height: clamp(280px, 44vh, 440px); }
+.quad .work-frame{ --h: clamp(210px, 30vh, 340px); }
+.process-row .work-frame{ --h: clamp(84px, 11vw, 132px); }
+.timbri-strip .work-frame{ --h: clamp(150px, 19vw, 230px); }
+.portrait-wrap .work-frame{ --h: clamp(280px, 44vh, 440px); }
+
+/* ─── titoli: righe statiche, nessuna animazione ──────────────────── */
+.portfolio-section .section-head .double-rule::before,
+.portfolio-section .section-head .double-rule::after{
+  transform: scaleX(1);
+  transition: none;
+}
+.portfolio-section .section-head h2,
+.portfolio-section .section-head .roman,
+.portfolio-section .section-head .sub{ opacity: 1; transform: none; transition: none; }
+.portfolio-section .work-date{ opacity: 1; transform: none; transition: none; }
 
 /* ─── didascalie ──────────────────────────────────────────────────── */
 .work-label{
@@ -701,12 +716,10 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   border-bottom: 1px solid var(--ink);
   padding: 6px 18px;
   display: inline-block;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .6s var(--e-out), transform .7s var(--e-out);
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
-.work.is-in .work-label,
-.group-caption .work-label{ opacity: 1; transform: translateY(0); transition-delay: .5s; }
 .work-tech{
   display: block;
   margin-top: 10px;
@@ -715,11 +728,9 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   font-size: 13px;
   color: var(--mute);
   letter-spacing: 0.04em;
-  opacity: 0;
-  transition: opacity .6s var(--e-out) .7s;
+  opacity: 1;
+  transition: none;
 }
-.work.is-in .work-tech,
-.group-caption .work-tech{ opacity: 1; }
 .work-caption{ flex-direction: column; }
 
 .group-caption{
@@ -856,16 +867,16 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   .process-row{ grid-template-columns: repeat(3, 1fr); }
   .quote{ font-size: 16.5px; }
   .section-body{ font-size: 16px; }
-  .portfolio-section .work-frame{ height: clamp(240px, 40vh, 380px); }
-  .duo .work-frame, .quad .work-frame{ height: clamp(170px, 24vh, 260px); }
+  .portfolio-section .work-frame{ --h: clamp(240px, 40vh, 380px); }
+  .duo .work-frame, .quad .work-frame{ --h: clamp(170px, 24vh, 260px); }
 }
 @media (max-width: 560px){
   .duo, .quad{ grid-template-columns: 1fr 1fr; gap: clamp(14px, 3vw, 24px); }
   .timbri-strip{ grid-template-columns: 1fr 1fr; }
-  .portfolio-section .work-frame{ height: clamp(210px, 34vh, 300px); }
-  .duo .work-frame, .quad .work-frame{ height: clamp(130px, 21vh, 190px); }
-  .timbri-strip .work-frame{ height: clamp(120px, 20vh, 170px); }
-  .process-row .work-frame{ height: clamp(70px, 15vw, 100px); }
+  .portfolio-section .work-frame{ --h: clamp(210px, 34vh, 300px); }
+  .duo .work-frame, .quad .work-frame{ --h: clamp(130px, 21vh, 190px); }
+  .timbri-strip .work-frame{ --h: clamp(120px, 20vh, 170px); }
+  .process-row .work-frame{ --h: clamp(70px, 15vw, 100px); }
   .work-label{ font-size: 12.5px; padding: 5px 12px; }
   .work-tech{ font-size: 12px; margin-top: 8px; }
   section#portfolio-top{ padding-top: clamp(130px, 28vw, 175px); }
@@ -907,7 +918,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
   <div class="pf-gallery portrait-wrap">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/968;">
+      <div class="work-frame" style="--ar: 1600/968; --arn: 1.6529;">
         <img src="portfolio/ritratto.jpg"
              srcset="portfolio/thumbs/ritratto.jpg 800w, portfolio/ritratto.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -930,7 +941,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   <div class="pf-gallery">
     <div class="duo">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1183/1600;">
+      <div class="work-frame" style="--ar: 1183/1600; --arn: 0.7394;">
         <img src="portfolio/troppo-vistoso.jpg"
              srcset="portfolio/thumbs/troppo-vistoso.jpg 800w, portfolio/troppo-vistoso.jpg 1183w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -943,7 +954,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </figcaption>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1202/1600;">
+      <div class="work-frame" style="--ar: 1202/1600; --arn: 0.7512;">
         <img src="portfolio/una-citta-viva.jpg"
              srcset="portfolio/thumbs/una-citta-viva.jpg 800w, portfolio/una-citta-viva.jpg 1202w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -958,7 +969,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     </div>
 
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1582;">
+      <div class="work-frame" style="--ar: 1600/1582; --arn: 1.0114;">
         <img src="portfolio/gli-intrusi.jpg"
              srcset="portfolio/thumbs/gli-intrusi.jpg 800w, portfolio/gli-intrusi.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -988,7 +999,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
   <div class="pf-gallery">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1058;">
+      <div class="work-frame" style="--ar: 1600/1058; --arn: 1.5123;">
         <img src="portfolio/guernica-parma.jpg"
              srcset="portfolio/thumbs/guernica-parma.jpg 800w, portfolio/guernica-parma.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1000,7 +1011,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </figcaption>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1200;">
+      <div class="work-frame" style="--ar: 1600/1200; --arn: 1.3333;">
         <img src="portfolio/guernica-interno.jpg"
              srcset="portfolio/thumbs/guernica-interno.jpg 800w, portfolio/guernica-interno.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1013,7 +1024,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </figcaption>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1067;">
+      <div class="work-frame" style="--ar: 1600/1067; --arn: 1.4995;">
         <img src="portfolio/campana-drone.jpg"
              srcset="portfolio/thumbs/campana-drone.jpg 800w, portfolio/campana-drone.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1035,7 +1046,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
   <div class="pf-gallery">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1291/1600;">
+      <div class="work-frame" style="--ar: 1291/1600; --arn: 0.8069;">
         <img src="portfolio/campana-dettaglio.jpg"
              srcset="portfolio/thumbs/campana-dettaglio.jpg 800w, portfolio/campana-dettaglio.jpg 1291w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1061,7 +1072,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
   <div class="pf-gallery">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1575;">
+      <div class="work-frame" style="--ar: 1600/1575; --arn: 1.0159;">
         <img src="portfolio/balconata.jpg"
              srcset="portfolio/thumbs/balconata.jpg 800w, portfolio/balconata.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1076,11 +1087,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
     <div class="duo">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1080/1080;">
+      <div class="work-frame" style="--ar: 951/671; --arn: 1.4173;">
         <img src="portfolio/senza-titolo-2023.jpg"
-             srcset="portfolio/thumbs/senza-titolo-2023.jpg 800w, portfolio/senza-titolo-2023.jpg 1080w"
+             srcset="portfolio/thumbs/senza-titolo-2023.jpg 800w, portfolio/senza-titolo-2023.jpg 951w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
-             width="1080" height="1080"
+             width="951" height="671"
              alt="Senza titolo, 2023" loading="lazy" decoding="async" />
       </div>
       <figcaption class="work-caption">
@@ -1089,7 +1100,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </figcaption>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1591/1600;">
+      <div class="work-frame" style="--ar: 1591/1600; --arn: 0.9944;">
         <img src="portfolio/montagna-bianca.jpg"
              srcset="portfolio/thumbs/montagna-bianca.jpg 800w, portfolio/montagna-bianca.jpg 1591w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1105,7 +1116,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
     <div class="duo">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1286/1600;">
+      <div class="work-frame" style="--ar: 1286/1600; --arn: 0.8037;">
         <img src="portfolio/ditirambo.jpg"
              srcset="portfolio/thumbs/ditirambo.jpg 800w, portfolio/ditirambo.jpg 1286w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1118,7 +1129,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </figcaption>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1580/1600;">
+      <div class="work-frame" style="--ar: 1580/1600; --arn: 0.9875;">
         <img src="portfolio/tre-carte-blu.jpg"
              srcset="portfolio/thumbs/tre-carte-blu.jpg 800w, portfolio/tre-carte-blu.jpg 1580w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1133,7 +1144,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     </div>
 
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1359;">
+      <div class="work-frame" style="--ar: 1600/1359; --arn: 1.1773;">
         <img src="portfolio/colori-coloniali.jpg"
              srcset="portfolio/thumbs/colori-coloniali.jpg 800w, portfolio/colori-coloniali.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1147,7 +1158,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     </figure>
 
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1058;">
+      <div class="work-frame" style="--ar: 1600/1058; --arn: 1.5123;">
         <img src="portfolio/strade-affollate.jpg"
              srcset="portfolio/thumbs/strade-affollate.jpg 800w, portfolio/strade-affollate.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
@@ -1179,7 +1190,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
   <div class="quad">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1177/1600;">
+      <div class="work-frame" style="--ar: 1177/1600; --arn: 0.7356;">
         <img src="portfolio/arazzo-1.jpg"
              srcset="portfolio/thumbs/arazzo-1.jpg 800w, portfolio/arazzo-1.jpg 1177w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1188,7 +1199,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1133/1600;">
+      <div class="work-frame" style="--ar: 1133/1600; --arn: 0.7081;">
         <img src="portfolio/arazzo-2.jpg"
              srcset="portfolio/thumbs/arazzo-2.jpg 800w, portfolio/arazzo-2.jpg 1133w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1197,7 +1208,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1350/1600;">
+      <div class="work-frame" style="--ar: 1350/1600; --arn: 0.8438;">
         <img src="portfolio/arazzo-3.jpg"
              srcset="portfolio/thumbs/arazzo-3.jpg 800w, portfolio/arazzo-3.jpg 1350w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1206,7 +1217,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1290/1600;">
+      <div class="work-frame" style="--ar: 1290/1600; --arn: 0.8063;">
         <img src="portfolio/arazzo-4.jpg"
              srcset="portfolio/thumbs/arazzo-4.jpg 800w, portfolio/arazzo-4.jpg 1290w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1222,42 +1233,42 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
   <div class="process-row">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600;">
+      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
         <img src="portfolio/thumbs/processo-1.jpg"
              width="1200" height="1600"
              alt="Il telaio" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600;">
+      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
         <img src="portfolio/thumbs/processo-2.jpg"
              width="1200" height="1600"
              alt="La tessitura" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1200;">
+      <div class="work-frame" style="--ar: 1600/1200; --arn: 1.3333;">
         <img src="portfolio/thumbs/processo-3.jpg"
              width="1600" height="1200"
              alt="Le lane" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600;">
+      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
         <img src="portfolio/thumbs/processo-4.jpg"
              width="1200" height="1600"
              alt="Kairouan" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600;">
+      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
         <img src="portfolio/thumbs/processo-5.jpg"
              width="1200" height="1600"
              alt="Le campionature dei colori" loading="lazy" decoding="async" />
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600;">
+      <div class="work-frame" style="--ar: 1200/1600; --arn: 0.7500;">
         <img src="portfolio/thumbs/processo-6.jpg"
              width="1200" height="1600"
              alt="Le campionature dei colori" loading="lazy" decoding="async" />
@@ -1278,11 +1289,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
   <div class="pf-gallery">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1200/1600;">
+      <div class="work-frame" style="--ar: 1173/1600; --arn: 0.7331;">
         <img src="portfolio/olio-2024-12-23.jpg"
-             srcset="portfolio/thumbs/olio-2024-12-23.jpg 800w, portfolio/olio-2024-12-23.jpg 1200w"
+             srcset="portfolio/thumbs/olio-2024-12-23.jpg 800w, portfolio/olio-2024-12-23.jpg 1173w"
              sizes="(max-width: 720px) 92vw, 720px"
-             width="1200" height="1600"
+             width="1173" height="1600"
              alt="23/12/2024 I" loading="lazy" decoding="async" />
       </div>
       <figcaption class="work-caption">
@@ -1292,11 +1303,11 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     </figure>
 
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1293;">
+      <div class="work-frame" style="--ar: 1600/1298; --arn: 1.2327;">
         <img src="portfolio/pastello-2025-02-01.jpg"
              srcset="portfolio/thumbs/pastello-2025-02-01.jpg 800w, portfolio/pastello-2025-02-01.jpg 1600w"
              sizes="(max-width: 720px) 92vw, 720px"
-             width="1600" height="1293"
+             width="1600" height="1298"
              alt="1/2/2025 I" loading="lazy" decoding="async" />
       </div>
       <figcaption class="work-caption">
@@ -1308,7 +1319,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     <div class="set">
       <div class="quad">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1405/1600;">
+      <div class="work-frame" style="--ar: 1405/1600; --arn: 0.8781;">
         <img src="portfolio/acq-2025-02-01-1.jpg"
              srcset="portfolio/thumbs/acq-2025-02-01-1.jpg 800w, portfolio/acq-2025-02-01-1.jpg 1405w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1317,7 +1328,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1416/1600;">
+      <div class="work-frame" style="--ar: 1416/1600; --arn: 0.8850;">
         <img src="portfolio/acq-2025-02-01-2.jpg"
              srcset="portfolio/thumbs/acq-2025-02-01-2.jpg 800w, portfolio/acq-2025-02-01-2.jpg 1416w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1326,7 +1337,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1433/1600;">
+      <div class="work-frame" style="--ar: 1433/1600; --arn: 0.8956;">
         <img src="portfolio/acq-2025-02-01-3.jpg"
              srcset="portfolio/thumbs/acq-2025-02-01-3.jpg 800w, portfolio/acq-2025-02-01-3.jpg 1433w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1335,7 +1346,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1412/1600;">
+      <div class="work-frame" style="--ar: 1412/1600; --arn: 0.8825;">
         <img src="portfolio/acq-2025-02-01-4.jpg"
              srcset="portfolio/thumbs/acq-2025-02-01-4.jpg 800w, portfolio/acq-2025-02-01-4.jpg 1412w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1351,7 +1362,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
       <div class="quad verso">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1410/1600;">
+      <div class="work-frame" style="--ar: 1410/1600; --arn: 0.8812;">
         <img src="portfolio/acq-retro-1.jpg"
              srcset="portfolio/thumbs/acq-retro-1.jpg 800w, portfolio/acq-retro-1.jpg 1410w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1360,7 +1371,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1442/1600;">
+      <div class="work-frame" style="--ar: 1442/1600; --arn: 0.9012;">
         <img src="portfolio/acq-retro-2.jpg"
              srcset="portfolio/thumbs/acq-retro-2.jpg 800w, portfolio/acq-retro-2.jpg 1442w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1369,7 +1380,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1403/1600;">
+      <div class="work-frame" style="--ar: 1403/1600; --arn: 0.8769;">
         <img src="portfolio/acq-retro-3.jpg"
              srcset="portfolio/thumbs/acq-retro-3.jpg 800w, portfolio/acq-retro-3.jpg 1403w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1378,7 +1389,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1390/1600;">
+      <div class="work-frame" style="--ar: 1390/1600; --arn: 0.8688;">
         <img src="portfolio/acq-retro-4.jpg"
              srcset="portfolio/thumbs/acq-retro-4.jpg 800w, portfolio/acq-retro-4.jpg 1390w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1393,7 +1404,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
     <div class="set">
       <div class="duo">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1364;">
+      <div class="work-frame" style="--ar: 1600/1364; --arn: 1.1730;">
         <img src="portfolio/past-2025-02-21-1.jpg"
              srcset="portfolio/thumbs/past-2025-02-21-1.jpg 800w, portfolio/past-2025-02-21-1.jpg 1600w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1402,7 +1413,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1369;">
+      <div class="work-frame" style="--ar: 1600/1369; --arn: 1.1687;">
         <img src="portfolio/past-2025-02-21-2.jpg"
              srcset="portfolio/thumbs/past-2025-02-21-2.jpg 800w, portfolio/past-2025-02-21-2.jpg 1600w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1418,7 +1429,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
 
       <div class="duo verso">
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1361;">
+      <div class="work-frame" style="--ar: 1600/1361; --arn: 1.1756;">
         <img src="portfolio/past-retro-1.jpg"
              srcset="portfolio/thumbs/past-retro-1.jpg 800w, portfolio/past-retro-1.jpg 1600w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1427,7 +1438,7 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
       </div>
     </figure>
     <figure class="work">
-      <div class="work-frame" style="--ar: 1600/1357;">
+      <div class="work-frame" style="--ar: 1600/1357; --arn: 1.1791;">
         <img src="portfolio/past-retro-2.jpg"
              srcset="portfolio/thumbs/past-retro-2.jpg 800w, portfolio/past-retro-2.jpg 1600w"
              sizes="(max-width: 560px) 92vw, (max-width: 900px) 46vw, 420px"
@@ -1551,22 +1562,6 @@ section#portfolio-top{ padding-top: clamp(170px, 19vw, 250px); padding-bottom: c
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  const rules = document.querySelectorAll('.section-head .double-rule');
-  if(rules.length){
-    let cursorX = window.innerWidth / 2;
-    window.addEventListener('pointermove', (e) => { cursorX = e.clientX; }, { passive: true });
-    const drawRule = (rule) => {
-      const r = rule.getBoundingClientRect();
-      rule.style.setProperty('--rule-origin', cursorX < r.left + r.width / 2 ? '0%' : '100%');
-      rule.classList.add('is-drawn');
-    };
-    if('IntersectionObserver' in window){
-      const ruleIO = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if(e.isIntersecting){ drawRule(e.target); ruleIO.unobserve(e.target); } });
-      }, { threshold: 0.4, rootMargin: '0px 0px -10% 0px' });
-      rules.forEach(r => ruleIO.observe(r));
-    } else { rules.forEach(drawRule); }
-  }
 })();
 </script>
 
