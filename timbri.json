@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-09-01",
-  "count": 165,
+  "count": 168,
   "items": [
     {
       "id": "IMG_0287",
@@ -57,6 +57,48 @@
       "width": 1800,
       "height": 1314,
       "ratio_pct": 73.0
+    },
+    {
+      "id": "IMG_0291",
+      "date_iso": "2026-08-23",
+      "date_display": "23/8/26",
+      "raw_stamp": "23/8/2026",
+      "file_web": "foto_definitive/Timbro_2026-08-23.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-08-23.jpg",
+      "filename": "Timbro_2026-08-23.jpg",
+      "confidence": "high",
+      "notes": "v7: \"SPIDERMAN E BILAL / LE LORO ALPI / NADIA / TENDE GELIDE\"",
+      "width": 1800,
+      "height": 1256,
+      "ratio_pct": 69.78
+    },
+    {
+      "id": "IMG_0293",
+      "date_iso": "2026-08-22",
+      "date_display": "22/8/26",
+      "raw_stamp": "22/8/2026",
+      "file_web": "foto_definitive/Timbro_2026-08-22.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-08-22.jpg",
+      "filename": "Timbro_2026-08-22.jpg",
+      "confidence": "high",
+      "notes": "v7: \"STAR WARS TRA GRANDI BANDIERE / BAMBINI ADA ALLA DERIVA / MR CHAO / DONNA RAGNO\"",
+      "width": 1800,
+      "height": 1309,
+      "ratio_pct": 72.72
+    },
+    {
+      "id": "IMG_0292",
+      "date_iso": "2026-08-21",
+      "date_display": "21/8/26",
+      "raw_stamp": "21/8/2026",
+      "file_web": "foto_definitive/Timbro_2026-08-21.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-08-21.jpg",
+      "filename": "Timbro_2026-08-21.jpg",
+      "confidence": "high",
+      "notes": "v7: \"PROPOSTISSIMA\" (minimale)",
+      "width": 1800,
+      "height": 1296,
+      "ratio_pct": 72.0
     },
     {
       "id": "IMG_9768",
