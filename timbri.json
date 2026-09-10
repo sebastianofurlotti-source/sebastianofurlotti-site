@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09",
+  "generated_at": "2026-09-10",
   "count": 172,
   "items": [
     {
@@ -11,10 +11,10 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-08.jpg",
       "filename": "Timbro_2026-09-08.jpg",
       "confidence": "high",
-      "notes": "v7 rot90: \"AMICIZIE / E VINI / RIMANGONO\"",
+      "notes": "v9 perspective warp: \"AMICIZIE / E VINI / RIMANGONO\"",
       "width": 1800,
-      "height": 1466,
-      "ratio_pct": 81.44
+      "height": 1050,
+      "ratio_pct": 58.33
     },
     {
       "id": "IMG_0418",
@@ -25,10 +25,10 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-07.jpg",
       "filename": "Timbro_2026-09-07.jpg",
       "confidence": "high",
-      "notes": "v7 rot270: \"CORREGGO / MOLTO E / COLTAMENTE\"",
+      "notes": "v9 perspective warp: \"CORREGGO / MOLTO E / COLTAMENTE\"",
       "width": 1800,
-      "height": 1424,
-      "ratio_pct": 79.11
+      "height": 1238,
+      "ratio_pct": 68.78
     },
     {
       "id": "IMG_0421",
@@ -39,7 +39,7 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-06.jpg",
       "filename": "Timbro_2026-09-06.jpg",
       "confidence": "high",
-      "notes": "v7 rot90: \"IL LUNGO / VIAGGIO / VALENCIANO\"",
+      "notes": "v9 perspective warp: \"IL LUNGO / VIAGGIO / VALENCIANO\"",
       "width": 1800,
       "height": 1350,
       "ratio_pct": 75.0
@@ -53,10 +53,10 @@
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-05.jpg",
       "filename": "Timbro_2026-09-05.jpg",
       "confidence": "high",
-      "notes": "v7 rot90: \"CORREGGO / SOROLLA, REMBRANDT / PAELLA\"",
+      "notes": "v9 perspective warp: \"CORREGGO / SOROLLA, REMBRANDT / PAELLA\"",
       "width": 1800,
-      "height": 1350,
-      "ratio_pct": 75.0
+      "height": 1275,
+      "ratio_pct": 70.83
     },
     {
       "id": "IMG_0287",
