@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-09-12",
-  "count": 177,
+  "generated_at": "2026-09-13",
+  "count": 181,
   "items": [
+    {
+      "id": "IMG_0462",
+      "date_iso": "2026-09-12",
+      "date_display": "12/9/26",
+      "raw_stamp": "12/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-12.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-12.jpg",
+      "filename": "Timbro_2026-09-12.jpg",
+      "confidence": "high",
+      "notes": "v7 rot90: \"RAGUE / MORDILATE / UMATRICI / INASPETTATE\"",
+      "width": 1800,
+      "height": 1317,
+      "ratio_pct": 73.17
+    },
     {
       "id": "IMG_0445",
       "date_iso": "2026-09-10",
@@ -15,6 +29,20 @@
       "width": 1800,
       "height": 1266,
       "ratio_pct": 70.33
+    },
+    {
+      "id": "IMG_0461",
+      "date_iso": "2026-09-09",
+      "date_display": "9/9/26",
+      "raw_stamp": "9/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-09.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-09.jpg",
+      "filename": "Timbro_2026-09-09.jpg",
+      "confidence": "medium",
+      "notes": "v7 rot90: \"STRANE PRIORITÀ / E STRANE DONNE\" (data 9/9 dedotta, primo digit strikethrough)",
+      "width": 1800,
+      "height": 1249,
+      "ratio_pct": 69.39
     },
     {
       "id": "IMG_0419",
@@ -155,6 +183,34 @@
       "width": 1800,
       "height": 1314,
       "ratio_pct": 73.0
+    },
+    {
+      "id": "IMG_0459",
+      "date_iso": "2026-08-27",
+      "date_display": "27/8/26",
+      "raw_stamp": "27/8/2026",
+      "file_web": "foto_definitive/Timbro_2026-08-27.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-08-27.jpg",
+      "filename": "Timbro_2026-08-27.jpg",
+      "confidence": "high",
+      "notes": "v7 rot270: \"STUDIO IL MIO FUTURO / IN VESTAGLIA\"",
+      "width": 1800,
+      "height": 1325,
+      "ratio_pct": 73.61
+    },
+    {
+      "id": "IMG_0460",
+      "date_iso": "2026-08-26",
+      "date_display": "26/8/26",
+      "raw_stamp": "26/8/2026",
+      "file_web": "foto_definitive/Timbro_2026-08-26.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-08-26.jpg",
+      "filename": "Timbro_2026-08-26.jpg",
+      "confidence": "high",
+      "notes": "v7 rot270: \"STUDIO IL GRAN / ATTILIO IN / TASSI / MASSAGGIO / E NEGRONI\"",
+      "width": 1800,
+      "height": 1263,
+      "ratio_pct": 70.17
     },
     {
       "id": "IMG_0291",
