@@ -1,7 +1,21 @@
 {
   "generated_at": "2026-09-20",
-  "count": 191,
+  "count": 193,
   "items": [
+    {
+      "id": "IMG_0562",
+      "date_iso": "2026-09-19",
+      "date_display": "19/9/26",
+      "raw_stamp": "19/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-19.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-19.jpg",
+      "filename": "Timbro_2026-09-19.jpg",
+      "confidence": "high",
+      "notes": "v7 rot180: \"SAN SEBASTIÁN / LA FIESTA\"",
+      "width": 1800,
+      "height": 1308,
+      "ratio_pct": 72.67
+    },
     {
       "id": "IMG_0564",
       "date_iso": "2026-09-18",
@@ -43,6 +57,20 @@
       "width": 1800,
       "height": 1319,
       "ratio_pct": 73.28
+    },
+    {
+      "id": "IMG_0561",
+      "date_iso": "2026-09-15",
+      "date_display": "15/9/26",
+      "raw_stamp": "15/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-15.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-15.jpg",
+      "filename": "Timbro_2026-09-15.jpg",
+      "confidence": "high",
+      "notes": "v7 rot270: \"A OSLO / NON INSEGNANO / L'EDUCAZIONE\"",
+      "width": 1800,
+      "height": 1251,
+      "ratio_pct": 69.5
     },
     {
       "id": "IMG_0567",
