@@ -1,7 +1,63 @@
 {
-  "generated_at": "2026-09-26",
-  "count": 197,
+  "generated_at": "2026-09-29",
+  "count": 202,
   "items": [
+    {
+      "id": "IMG_0643",
+      "date_iso": "2026-09-28",
+      "date_display": "28/9/26",
+      "raw_stamp": "28/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-28.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-28.jpg",
+      "filename": "Timbro_2026-09-28.jpg",
+      "confidence": "high",
+      "notes": "v7 rot90: \"PUZZARE DI MEDIOCRITÀ\"",
+      "width": 1800,
+      "height": 1273,
+      "ratio_pct": 70.72
+    },
+    {
+      "id": "IMG_0642",
+      "date_iso": "2026-09-27",
+      "date_display": "27/9/26",
+      "raw_stamp": "27/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-27.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-27.jpg",
+      "filename": "Timbro_2026-09-27.jpg",
+      "confidence": "high",
+      "notes": "v7 rot90: \"GIUDITTA E IL CITTARIO / SIMO\"",
+      "width": 1800,
+      "height": 1319,
+      "ratio_pct": 73.28
+    },
+    {
+      "id": "IMG_0640",
+      "date_iso": "2026-09-26",
+      "date_display": "26/9/26",
+      "raw_stamp": "26/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-26.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-26.jpg",
+      "filename": "Timbro_2026-09-26.jpg",
+      "confidence": "high",
+      "notes": "v7 rot270: \"FESTEGGIAMENTI SPECIALI / AFFASCINANTI / OCCHI MANDORLATI / RISSE BOCCIONATE / MORRISON MODERNO\"",
+      "width": 1800,
+      "height": 1271,
+      "ratio_pct": 70.61
+    },
+    {
+      "id": "IMG_0639",
+      "date_iso": "2026-09-25",
+      "date_display": "25/9/26",
+      "raw_stamp": "25/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-25.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-25.jpg",
+      "filename": "Timbro_2026-09-25.jpg",
+      "confidence": "medium",
+      "notes": "v7 rot0: composizione arc \"TORTA WOW / LAUREE SU LAUREE / BELLE MILIARDARIE / PROCLAMATO SON / MANGO DA OCCHIOCCHIALI / LISCIO, TOMMASI / GRAZIE / CUBA\" (data stampata 25/6 corretta a mano con 9 sotto)",
+      "width": 1800,
+      "height": 1265,
+      "ratio_pct": 70.28
+    },
     {
       "id": "IMG_0615",
       "date_iso": "2026-09-24",
@@ -57,6 +113,20 @@
       "width": 1800,
       "height": 1320,
       "ratio_pct": 73.33
+    },
+    {
+      "id": "IMG_0641",
+      "date_iso": "2026-09-20",
+      "date_display": "20/9/26",
+      "raw_stamp": "20/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-20.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-20.jpg",
+      "filename": "Timbro_2026-09-20.jpg",
+      "confidence": "high",
+      "notes": "v7 rot90: \"STIAMO ARRIVANDO / AL NOSTRO DESTINO / FIORENTINE E AUGURI\"",
+      "width": 1800,
+      "height": 1299,
+      "ratio_pct": 72.17
     },
     {
       "id": "IMG_0562",
