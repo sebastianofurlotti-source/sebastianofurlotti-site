@@ -1,7 +1,63 @@
 {
-  "generated_at": "2026-09-29",
-  "count": 202,
+  "generated_at": "2026-10-03",
+  "count": 206,
   "items": [
+    {
+      "id": "IMG_0703",
+      "date_iso": "2026-10-02",
+      "date_display": "2/10/26",
+      "raw_stamp": "2/10/2026",
+      "file_web": "foto_definitive/Timbro_2026-10-02.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-10-02.jpg",
+      "filename": "Timbro_2026-10-02.jpg",
+      "confidence": "high",
+      "notes": "v7 rot270: composizione arc \"GUNTHER ANDERS / E L'HOMME MACHINE / OROLOGIO / CIRRA / DI PIM\"",
+      "width": 1800,
+      "height": 1257,
+      "ratio_pct": 69.83
+    },
+    {
+      "id": "IMG_0706",
+      "date_iso": "2026-10-01",
+      "date_display": "1/10/26",
+      "raw_stamp": "1/10/2026",
+      "file_web": "foto_definitive/Timbro_2026-10-01.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-10-01.jpg",
+      "filename": "Timbro_2026-10-01.jpg",
+      "confidence": "medium",
+      "notes": "v7 rot90: \"LOTTA / MARZIO E FILOSOFEGGIARE / LANGHEZZUNE / GALLUZZO\" (data stampata \"10/1/2026\" interpretata come 1/10)",
+      "width": 1800,
+      "height": 1225,
+      "ratio_pct": 68.06
+    },
+    {
+      "id": "IMG_0705",
+      "date_iso": "2026-09-30",
+      "date_display": "30/9/26",
+      "raw_stamp": "30/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-30.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-30.jpg",
+      "filename": "Timbro_2026-09-30.jpg",
+      "confidence": "high",
+      "notes": "v7 rot90: \"È L'UOMO CHE È MACCHINA O / LA MACCHINA CHE È UOMO\"",
+      "width": 1800,
+      "height": 1268,
+      "ratio_pct": 70.44
+    },
+    {
+      "id": "IMG_0704",
+      "date_iso": "2026-09-29",
+      "date_display": "29/9/26",
+      "raw_stamp": "29/9/2026",
+      "file_web": "foto_definitive/Timbro_2026-09-29.jpg",
+      "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-29.jpg",
+      "filename": "Timbro_2026-09-29.jpg",
+      "confidence": "high",
+      "notes": "v7 rot270: \"MONICA\"",
+      "width": 1800,
+      "height": 1305,
+      "ratio_pct": 72.5
+    },
     {
       "id": "IMG_0643",
       "date_iso": "2026-09-28",
@@ -59,18 +115,18 @@
       "ratio_pct": 70.28
     },
     {
-      "id": "IMG_0615",
+      "id": "IMG_0702",
       "date_iso": "2026-09-24",
       "date_display": "24/9/26",
       "raw_stamp": "24/9/2026",
       "file_web": "foto_definitive/Timbro_2026-09-24.jpg",
       "file_thumb": "foto_definitive/thumbs/Timbro_2026-09-24.jpg",
       "filename": "Timbro_2026-09-24.jpg",
-      "confidence": "medium",
-      "notes": "v7 rot270: \"NON CAPISCO I LESBICAMI, MA NON MI SCANDALIZZO\" (data stampata 24/6 ma probabile misprint del mese, batch è 21-23/9)",
+      "confidence": "high",
+      "notes": "v7 rot270 (REPLACEMENT di IMG_0615): \"NON CAPISCO I LESBICAMI, MA NON MI SCANDALIZZO\" (data stampata 24/6, correzione manuale 9 sopra)",
       "width": 1800,
-      "height": 1263,
-      "ratio_pct": 70.17
+      "height": 1259,
+      "ratio_pct": 69.94
     },
     {
       "id": "IMG_0616",
