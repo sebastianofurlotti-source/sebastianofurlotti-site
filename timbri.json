@@ -1,7 +1,19 @@
 {
-  "generated_at": "2026-10-03",
+  "generated_at": "2026-10-04",
   "count": 206,
   "items": [
+    {
+      "date_iso": "2026-10-03",
+      "date_display": "3/10/2026",
+      "filename": "Timbro_2026-10-03.jpg",
+      "thumb": "thumbs/Timbro_2026-10-03.jpg",
+      "width": 1800,
+      "height": 1245,
+      "ratio_pct": 69.17,
+      "title": "Charles B.",
+      "desc": "CHARLES B. / GARBA E GRETA / SPERSO TRA AVVOCATI / BISOGNA ANDARE OLTRE / STRAPARLIAMO",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
     {
       "id": "IMG_0703",
       "date_iso": "2026-10-02",
