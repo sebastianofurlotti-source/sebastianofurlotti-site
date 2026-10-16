@@ -1,7 +1,43 @@
 {
-  "generated_at": "2026-10-13",
+  "generated_at": "2026-10-16",
   "count": 206,
   "items": [
+    {
+      "date_iso": "2026-10-15",
+      "date_display": "15/10/2026",
+      "filename": "Timbro_2026-10-15.jpg",
+      "thumb": "thumbs/Timbro_2026-10-15.jpg",
+      "width": 1800,
+      "height": 1400,
+      "ratio_pct": 77.78,
+      "title": "La bruttezza consumerà il mondo",
+      "desc": "LA BRUTTEZZA CONSUMERÀ IL MONDO",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
+    {
+      "date_iso": "2026-10-14",
+      "date_display": "14/10/2026",
+      "filename": "Timbro_2026-10-14.jpg",
+      "thumb": "thumbs/Timbro_2026-10-14.jpg",
+      "width": 1800,
+      "height": 1314,
+      "ratio_pct": 73.0,
+      "title": "Caffè malefici",
+      "desc": "CAFFÈ MALEFICI",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
+    {
+      "date_iso": "2026-10-13",
+      "date_display": "13/10/2026",
+      "filename": "Timbro_2026-10-13.jpg",
+      "thumb": "thumbs/Timbro_2026-10-13.jpg",
+      "width": 1800,
+      "height": 1314,
+      "ratio_pct": 73.0,
+      "title": "Dopo gli speciali",
+      "desc": "DOPO GLI SPECIALI CONOSCO TUTTI",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
     {
       "date_iso": "2026-10-12",
       "date_display": "12/10/2026",
@@ -2291,6 +2327,18 @@
       "height": 1224,
       "ratio_pct": 68.0,
       "filename": "Timbro_2026-04-18.jpg"
+    },
+    {
+      "date_iso": "2026-04-12",
+      "date_display": "12/4/2026",
+      "filename": "Timbro_2026-04-12.jpg",
+      "thumb": "thumbs/Timbro_2026-04-12.jpg",
+      "width": 1800,
+      "height": 1274,
+      "ratio_pct": 70.78,
+      "title": "Il Cervino sotto la nebbia",
+      "desc": "IL CERVINO SOTTO LA NEBBIA / GAIA MI INSEGNA A SCIARE / PERSI E STRAPERSI",
+      "notes": "v7 + v5 originale, confidence data: high"
     },
     {
       "id": "IMG_8163",
