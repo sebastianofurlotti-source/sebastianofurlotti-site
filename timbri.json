@@ -1,7 +1,67 @@
 {
-  "generated_at": "2026-10-21",
+  "generated_at": "2026-10-25",
   "count": 206,
   "items": [
+    {
+      "date_iso": "2026-10-25",
+      "date_display": "25/10/2026",
+      "filename": "Timbro_2026-10-25.jpg",
+      "thumb": "thumbs/Timbro_2026-10-25.jpg",
+      "width": 1800,
+      "height": 1301,
+      "ratio_pct": 72.28,
+      "title": "Villa Necchi",
+      "desc": "VILLA NECCHI / MOLTA FUTILITAS / IVAN HA RAGIONE / APPARTAMENTI DI AMICI CHE STIMA / STUDIO",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
+    {
+      "date_iso": "2026-10-24",
+      "date_display": "24/10/2026",
+      "filename": "Timbro_2026-10-24.jpg",
+      "thumb": "thumbs/Timbro_2026-10-24.jpg",
+      "width": 1800,
+      "height": 1273,
+      "ratio_pct": 70.72,
+      "title": "Molto lontano, la notte",
+      "desc": "MOLTO LONTANO, LA NOTTE / PITTORI E CO.",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
+    {
+      "date_iso": "2026-10-23",
+      "date_display": "23/10/2026",
+      "filename": "Timbro_2026-10-23.jpg",
+      "thumb": "thumbs/Timbro_2026-10-23.jpg",
+      "width": 1800,
+      "height": 1266,
+      "ratio_pct": 70.33,
+      "title": "Garba",
+      "desc": "GARBA / LIBRE E MEZCALITA LA RUE / IN FONDO, IL PERCHÉ NON LO SO",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
+    {
+      "date_iso": "2026-10-22",
+      "date_display": "22/10/2026",
+      "filename": "Timbro_2026-10-22.jpg",
+      "thumb": "thumbs/Timbro_2026-10-22.jpg",
+      "width": 1800,
+      "height": 1275,
+      "ratio_pct": 70.83,
+      "title": "Il tempo non esiste",
+      "desc": "IL TEMPO NON ESISTE",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
+    {
+      "date_iso": "2026-10-21",
+      "date_display": "21/10/2026",
+      "filename": "Timbro_2026-10-21.jpg",
+      "thumb": "thumbs/Timbro_2026-10-21.jpg",
+      "width": 1800,
+      "height": 1363,
+      "ratio_pct": 75.72,
+      "title": "Idee da antiquario",
+      "desc": "IDEE DA ANTIQUARIO",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
     {
       "date_iso": "2026-10-20",
       "date_display": "20/10/2026",
