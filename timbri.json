@@ -1,7 +1,55 @@
 {
-  "generated_at": "2026-11-03",
+  "generated_at": "2026-11-07",
   "count": 206,
   "items": [
+    {
+      "date_iso": "2026-11-06",
+      "date_display": "6/11/2026",
+      "filename": "Timbro_2026-11-06.jpg",
+      "thumb": "thumbs/Timbro_2026-11-06.jpg",
+      "width": 1800,
+      "height": 1327,
+      "ratio_pct": 73.72,
+      "title": "Divertirsi con poco — Istambul",
+      "desc": "DIVERTIRSI CON POCO / ISTAMBUL",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
+    {
+      "date_iso": "2026-11-05",
+      "date_display": "5/11/2026",
+      "filename": "Timbro_2026-11-05.jpg",
+      "thumb": "thumbs/Timbro_2026-11-05.jpg",
+      "width": 1800,
+      "height": 1282,
+      "ratio_pct": 71.22,
+      "title": "Milano a zonzo in moto",
+      "desc": "MILANO / A ZONZO IN MOTO / MI PENTO DELLA MIA EDUCAZIONE",
+      "notes": "v7 + v5 originale, confidence data: medium (ultime cifre data sbiadite, inferite da sequenza)"
+    },
+    {
+      "date_iso": "2026-11-04",
+      "date_display": "4/11/2026",
+      "filename": "Timbro_2026-11-04.jpg",
+      "thumb": "thumbs/Timbro_2026-11-04.jpg",
+      "width": 1800,
+      "height": 1316,
+      "ratio_pct": 73.11,
+      "title": "Cenone, anzi di uno",
+      "desc": "CENONE / ANZI, DI UNO",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
+    {
+      "date_iso": "2026-11-03",
+      "date_display": "3/11/2026",
+      "filename": "Timbro_2026-11-03.jpg",
+      "thumb": "thumbs/Timbro_2026-11-03.jpg",
+      "width": 1800,
+      "height": 1291,
+      "ratio_pct": 71.72,
+      "title": "Colloqui e logistica",
+      "desc": "COLLOQUI E LOGISTICA / UNICUIQUE SUUM",
+      "notes": "v7 + v5 originale, confidence data: high"
+    },
     {
       "date_iso": "2026-11-02",
       "date_display": "2/11/2026",
